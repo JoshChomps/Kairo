@@ -1,0 +1,208 @@
+Kairo
+Copyright 2026 The Kairo Authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This file lists the licence of every third-party package Kairo depends on,
+every external program it runs, and every project it borrows code from.
+tests/test_notice.py fails if uv.lock holds a package version that is not
+listed under "Python packages", so a dependency's licence gets looked at
+again whenever it changes. Each licence was read from the package's own
+licence file, or from its metadata where the file says the same or is
+missing, as noted.
+
+
+Python packages (uv.lock)
+=========================
+
+Each line: name and version, licence, what it is used for, and where the
+licence was read. Lines marked "runtime" are installed with Kairo: the MCP
+SDK and what it depends on. Lines marked "optional" are installed only
+with the extra they name. The dev and docs groups are tools for working
+on Kairo and are not shipped with it.
+
+accessible-pygments 0.0.5 | BSD-3-Clause | docs: Furo's code colours | metadata
+alabaster 1.0.0 | BSD-3-Clause | docs: Sphinx's default theme, pulled in by Sphinx | licence file
+annotated-types 0.8.0 | MIT | runtime: pydantic | licence file
+anyio 4.15.1 | MIT | runtime: mcp | licence file
+attrs 26.1.0 | MIT | runtime: jsonschema | licence file
+babel 2.18.0 | BSD-3-Clause | docs: Sphinx | metadata
+beautifulsoup4 4.15.0 | MIT | docs: Furo | licence file
+certifi 2026.7.22 | MPL-2.0 | docs: Sphinx link checks (via requests) | metadata
+cffi 2.1.1 | MIT-0 | runtime: cryptography | licence file
+charset-normalizer 3.5.2 | MIT | docs: requests | metadata
+click 8.5.0 | BSD-3-Clause | runtime: uvicorn | licence file
+colorama 0.4.6 | BSD-3-Clause | dev and docs: coloured output on Windows | licence file
+cryptography 50.0.2 | Apache-2.0 OR BSD-3-Clause | runtime: pyjwt | licence file
+docutils 0.22.4 | Public domain, with some files BSD-2-Clause (its one GPL file, an Emacs mode, is not in the wheel) | docs: Sphinx | licence file
+furo 2025.12.19 | MIT | docs: site theme | licence file
+h11 0.16.0 | MIT | runtime: httpcore2, uvicorn | licence file
+httpcore2 2.13.1 | BSD-3-Clause | runtime: httpx2 | licence file
+httpx2 2.13.1 | BSD-3-Clause | runtime: mcp | licence file
+httpx2-jsfetch 1.0 | BSD-3-Clause | runtime: httpx2, on Emscripten only, so never installed where Kairo runs | PyPI metadata
+hypothesis 6.168.5 | MPL-2.0 (unmodified dependency, allowed by the licence policy) | dev: property-based tests | licence file
+idna 3.20 | BSD-3-Clause | runtime: anyio, httpx2; docs: requests | metadata
+imagesize 2.0.1 | MIT | docs: Sphinx | metadata
+iniconfig 2.3.1 | MIT | dev: pytest | metadata
+jinja2 3.1.6 | BSD-3-Clause | docs: Sphinx templates | licence file
+jsonschema 4.26.0 | MIT | runtime: mcp | licence file
+jsonschema-specifications 2025.9.1 | MIT | runtime: jsonschema | licence file
+markdown-it-py 4.2.0 | MIT | docs: MyST | licence file
+markupsafe 3.0.4 | BSD-3-Clause | docs: Jinja2 | metadata
+mcp 2.3.0 | MIT | runtime: the MCP server (MCPServer, stdio transport) | licence file
+mcp-types 2.3.0 | MIT | runtime: mcp | licence file
+mdit-py-plugins 0.6.1 | MIT | docs: MyST | licence file
+mdurl 0.1.2 | MIT | docs: markdown-it-py | licence file
+myst-parser 5.1.0 | MIT | docs: Markdown pages in Sphinx | licence file
+nodeenv 1.11.0 | BSD-3-Clause | dev: pyright | licence file
+nodejs-wheel-binaries 24.19.0 | MIT (bundles Node.js, MIT, and npm, Artistic-2.0) | dev: pyright's Node.js runtime | licence file
+opentelemetry-api 1.45.1 | Apache-2.0 | runtime: mcp | licence file
+packaging 26.3 | Apache-2.0 OR BSD-2-Clause | dev and docs: pytest, Sphinx | metadata
+pdfminer-six 20260107 | MIT | optional (datasheets): pdfplumber's reading of a PDF's text and its positions | licence file
+pdfplumber 0.11.10 | MIT | optional (datasheets): reading the tables of a datasheet PDF | licence file
+pillow 12.3.0 | MIT-CMU | optional (datasheets): pdfplumber; Kairo makes no images with it | licence file
+pluggy 1.6.0 | MIT | dev: pytest | metadata
+pycparser 3.1 | BSD-3-Clause | runtime: cffi | licence file
+pydantic 2.14.0 | MIT | runtime: mcp; later the IR models | licence file
+pydantic-core 2.50.0 | MIT | runtime: pydantic | licence file
+pygments 2.21.0 | BSD-2-Clause | dev and docs: pytest, Sphinx | metadata
+pyjwt 2.15.1 | MIT | runtime: mcp | licence file
+pypdfium2 5.14.0 | BSD-3-Clause OR Apache-2.0; bundles the PDFium library (BSD-3-Clause) and what it is built from (FreeType under its own FTL, ICU under the Unicode licence, libjpeg-turbo, libpng, OpenJPEG, Little CMS, zlib, Abseil and others, each permissive; ICU's licence file also covers build scripts under the GPL with the Autoconf exception, which are not in the built library) | optional (datasheets): pdfplumber, which uses it to draw pages; Kairo does not import it or draw pages | licence files
+pyright 1.1.414 | MIT | dev: type checking | metadata
+pytest 9.1.1 | MIT | dev: tests | metadata
+python-multipart 0.0.32 | Apache-2.0 | runtime: mcp | licence file
+pywin32 312 | PSF-2.0; its bundled adodbapi is LGPL-2.1 (unmodified dependency, allowed by the licence policy; Kairo does not import it) | runtime: mcp, on Windows only | licence files
+pyyaml 6.0.3 | MIT | docs: MyST | metadata
+referencing 0.37.0 | MIT | runtime: jsonschema | licence file
+requests 2.34.2 | Apache-2.0 | docs: Sphinx | metadata
+roman-numerals 4.1.0 | 0BSD OR CC0-1.0 | docs: Sphinx | metadata
+rpds-py 2026.9.1 | MIT | runtime: jsonschema | licence file
+ruff 0.16.10 | MIT | dev: lint and format | metadata
+snowballstemmer 3.1.1 | BSD-3-Clause | docs: Sphinx search | metadata
+sortedcontainers 2.4.0 | Apache-2.0 | dev: hypothesis | licence file
+soupsieve 2.10 | MIT | docs: beautifulsoup4 | metadata
+sphinx 9.1.0 | BSD-2-Clause | docs: site builder | metadata
+sphinx-basic-ng 1.0.0b2 | MIT | docs: Furo | licence file
+sphinxcontrib-applehelp 2.0.0 | BSD (metadata; the wheel has no licence file) | docs: Sphinx | metadata
+sphinxcontrib-devhelp 2.0.0 | BSD (metadata; the wheel has no licence file) | docs: Sphinx | metadata
+sphinxcontrib-htmlhelp 2.1.0 | BSD (metadata; the wheel has no licence file) | docs: Sphinx | metadata
+sphinxcontrib-jsmath 1.0.1 | BSD-2-Clause | docs: Sphinx | licence file
+sphinxcontrib-qthelp 2.0.0 | BSD (metadata; the wheel has no licence file) | docs: Sphinx | metadata
+sphinxcontrib-serializinghtml 2.0.0 | BSD (metadata; the wheel has no licence file) | docs: Sphinx | metadata
+sse-starlette 3.5.0 | BSD-3-Clause | runtime: mcp | licence file
+starlette 1.7.0 | BSD-3-Clause | runtime: mcp | licence file
+truststore 0.10.4 | MIT | runtime: httpx2 | licence file
+typing-extensions 4.16.0 | PSF-2.0 | runtime: mcp, pydantic; dev: pytest | metadata
+typing-inspection 0.4.4 | MIT | runtime: pydantic | licence file
+urllib3 2.8.0 | MIT | docs: requests | metadata
+uvicorn 0.54.0 | BSD-3-Clause | runtime: mcp | licence file
+
+
+External programs (run as separate processes, never bundled)
+=============================================================
+
+KiCad (kicad-cli) | GPL-3.0-or-later | ERC, netlist export, plots
+ngspice 47 | Modified BSD core; KLU and numparam LGPLv2+; table code model GPLv2+; OSDI MPL-2.0 | simulation
+Xyce 7.10 | GPL-3.0 | simulation (second engine)
+QSPICE | Qorvo freeware, revocable; may not be redistributed | optional simulation, user's own install
+LTspice | Analog Devices freeware; internal use, no published comparisons | optional, ADI-encrypted models only, user's own install
+
+
+Rust crates (rust/kairo_fast/Cargo.lock)
+========================================
+
+The compiled inner loops (kairo-fast, Kairo's own code) are built from
+these crates; pyo3, rustc-hash and the Rust standard library are linked
+into it, the rest run only while it builds. Each licence was read from the
+crate's own Cargo.toml, with its licence files beside it. maturin (MIT OR
+Apache-2.0) builds it and is not shipped.
+
+heck 0.5.0 | MIT OR Apache-2.0 | build: pyo3's macros
+libc 0.2.191 | MIT OR Apache-2.0 | linked: pyo3
+once_cell 1.21.4 | MIT OR Apache-2.0 | build: pyo3's build configuration
+portable-atomic 1.15.0 | Apache-2.0 OR MIT | linked: pyo3
+proc-macro2 1.0.107 | MIT OR Apache-2.0 | build: pyo3's macros
+pyo3 0.30.1 | MIT OR Apache-2.0 | linked: the bindings to Python
+pyo3-build-config 0.30.1 | MIT OR Apache-2.0 | build: pyo3
+pyo3-ffi 0.30.1 | MIT OR Apache-2.0 | linked: pyo3
+pyo3-macros 0.30.1 | MIT OR Apache-2.0 | build: pyo3's macros
+pyo3-macros-backend 0.30.1 | MIT OR Apache-2.0 | build: pyo3's macros
+quote 1.0.47 | MIT OR Apache-2.0 | build: pyo3's macros
+rustc-hash 2.1.3 | Apache-2.0 OR MIT | linked: fast hash sets for the search
+syn 3.0.9 | MIT OR Apache-2.0 | build: pyo3's macros
+target-lexicon 0.13.5 | Apache-2.0 WITH LLVM-exception | build: pyo3's build configuration
+unicode-ident 1.0.27 | (MIT OR Apache-2.0) AND Unicode-3.0 | build: pyo3's macros
+
+
+KiCad libraries
+===============
+
+Kairo reads the symbol, footprint and 3D-model libraries of the user's own
+KiCad install and copies none of them into this repository. A schematic or
+board Kairo writes, like one drawn in KiCad, embeds the symbols and
+footprints it uses. The KiCad libraries are licensed CC-BY-SA-4.0 with an
+exception that waives the licence's terms for designs made with them and
+the files generated from them (https://www.kicad.org/libraries/license/);
+the schematics under evals/ that Kairo generated are such files.
+
+
+Test data
+=========
+
+tests/fixtures/kicad10/netlist/mikoto.net is the netlist kicad-cli 10.0.6
+wrote for the mikoto board listed below.
+
+tests/fixtures/kicad10/erc/*.json are ERC reports that kicad-cli 10.0.6
+wrote for copies of demo projects shipped with KiCad (share/kicad/demos).
+They are KiCad's output, kept so the ERC classifier is tested against what
+KiCad really writes; no demo project file is copied into this repository.
+The KiCad-backed tests copy the installed demos into a temporary folder at
+run time. See tests/fixtures/kicad10/erc/README.md.
+
+tests/fixtures/real/ holds sixteen open-hardware KiCad projects, unmodified,
+each under its own licence with the licence text beside it. See
+tests/fixtures/real/README.md for what was left out of each. ERC reports
+and a netlist that kicad-cli wrote for some of them are under
+tests/fixtures/kicad10/.
+
+Twelve were taken from their own repositories (schematic-side files only):
+
+Antmicro Artix DC-SCM | Copyright (c) 2020-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/artix-dc-scm at b9856f78179fce0739a4955dd4ed5f912619efe6 | tests/fixtures/real/antmicro-artix-dc-scm
+Antmicro COM Express 7 Baseboard | Copyright (c) 2024-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/com-express-7-baseboard at 4811fd8491dbe0cbbb738e127d3f7d1d6c1f8126 | tests/fixtures/real/antmicro-com-express-7-baseboard
+Antmicro Jetson Nano Baseboard | Copyright (c) 2020-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/jetson-nano-baseboard at d8d0b2d71ab4cc4bcdb204a09f78be40d4c8cda3 | tests/fixtures/real/antmicro-jetson-nano-baseboard
+Antmicro OSM-L System on Module for BMC | Copyright (c) 2025 Antmicro | Apache-2.0 | https://github.com/antmicro/osm-l-bmc-som at 241e7d299ee2facb4149a8df5f21f0102b09e6a9 | tests/fixtures/real/antmicro-osm-l-bmc-som
+Antmicro PolarFire SoM | Copyright (c) 2023-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/polarfire-som at 1c787f6b8bb91cfc65c87a11866b2d13cb3f11a0 | tests/fixtures/real/antmicro-polarfire-som
+Antmicro SO-DIMM DDR5 Tester | Copyright (c) 2023-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/sodimm-ddr5-tester at 05b265a75b87d63862323082bfdcb62949d22647 | tests/fixtures/real/antmicro-sodimm-ddr5-tester
+HackRF Pro | Copyright (c) 2012-2024 Great Scott Gadgets | CERN-OHL-P-2.0 | https://github.com/greatscottgadgets/hackrf-pro at 359b98f2451395408bc25dae64efa9fc518e93d0 | tests/fixtures/real/greatscottgadgets-hackrf-pro
+rpi-cm5io-mini-itx | Sanctuary Systems; upstream states no copyright line | CERN-OHL-P-2.0 | https://github.com/sanctuary-systems-com/rpi-cm5io-mini-itx at 5edf50af1ab07099f74da347a96993baa5d759bc | tests/fixtures/real/sanctuary-rpi-cm5io-mini-itx
+Clavier (PCB folder) | lsartory; upstream states no copyright line | CERN-OHL-P-2.0 | https://github.com/lsartory/Clavier at dbef00bbb8a9bff171d2a72315ee102eec42e3fd | tests/fixtures/real/lsartory-clavier
+VESC6 Open Hardware | Copyright (c) 2025 craigg96 | MIT | https://github.com/craigg96/VESC6_OPEN_HARDWARE at 1a11171913bd54e77269862e8c9f013df70e8481 | tests/fixtures/real/craigg96-vesc6-open-hardware
+pedalboard-hw | the pedalboard project; upstream states no copyright line | CERN-OHL-P-2.0 | https://github.com/pedalboard/pedalboard-hw at 3850a8c2391c59a8afc3a21d9ad2627a5685ea24 | tests/fixtures/real/pedalboard-pedalboard-hw
+RTB C13 | git4dcc; upstream states no copyright line | Apache-2.0 | https://github.com/git4dcc/RTB_C13 at 731f7d53c9d30c1811da7abf7a2dbee91a61214f | tests/fixtures/real/git4dcc-rtb-c13
+
+evals/routing/cases/mikoto.json, microphone-board.json and
+baseboard_2slots.json hold the pads, nets and net classes of three of
+these boards, their tracks and pours taken up, as
+evals/routing/import_board.py reads them: data from the boards, under
+each board's licence above.
+
+CERN-OHL-P-2.0 is a permissive hardware licence; it is used here for test
+data only, with the owner's agreement of 2026-10-08, and is not yet a row
+in the plan's licence policy for code.
+
+Four were taken from the fixture set of CopperBench (Copyright 2026 Chouhan
+Industries, Apache-2.0, https://github.com/copperheadhq/copperbench) at
+commit 09863d77aa87b86c8764db73964b256c7ce8b020:
+
+Antmicro Jetson Orin Baseboard | Copyright (c) 2022-2026 Antmicro | Apache-2.0 | https://github.com/antmicro/jetson-orin-baseboard at 34f0e7f5fbca441191e20ed55d93cf8614e12bed | tests/fixtures/real/antmicro-jetson-orin-baseboard
+Antmicro PDM Microphone Board | Copyright (c) 2024-2025 Antmicro | Apache-2.0 | https://github.com/antmicro/pdm-microphone-board at 20813e2bc99f52837a780334b16a30c2afb7644c | tests/fixtures/real/antmicro-microphone-board
+Open Lighting Project rp2040-dmxsun | Open Lighting Project; upstream states no copyright line | Apache-2.0 | https://github.com/OpenLightingProject/rp2040-dmxsun at f3b1749c982da85770dc9a11eada035404edc25d | tests/fixtures/real/openlighting-dmxsun-baseboard
+mikoto nRF52840 module | zhiayang; upstream states no copyright line | Apache-2.0 | https://github.com/zhiayang/mikoto at 86318f6c69495b8308354b6393d85229177b26ae | tests/fixtures/real/zhiayang-mikoto
+
+
+Borrowed code
+=============
+
+None yet. Anything adapted from another project will be listed here with
+its upstream URL, the commit it came from, its licence and the files it
+touched.

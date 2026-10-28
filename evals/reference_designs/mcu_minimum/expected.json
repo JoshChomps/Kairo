@@ -1,0 +1,36 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "+5V": [
+      "J1.1",
+      "U1.8",
+      "R1.1",
+      "C1.1"
+    ],
+    "GND": [
+      "J1.2",
+      "U1.4",
+      "C1.2"
+    ],
+    "/RESET": [
+      "U1.1",
+      "R1.2"
+    ],
+    "unconnected-(U1-XTAL1{slash}PB3-Pad2)": [
+      "U1.2"
+    ],
+    "unconnected-(U1-XTAL2{slash}PB4-Pad3)": [
+      "U1.3"
+    ],
+    "unconnected-(U1-AREF{slash}PB0-Pad5)": [
+      "U1.5"
+    ],
+    "unconnected-(U1-PB1-Pad6)": [
+      "U1.6"
+    ],
+    "unconnected-(U1-PB2-Pad7)": [
+      "U1.7"
+    ]
+  },
+  "unverified": []
+}

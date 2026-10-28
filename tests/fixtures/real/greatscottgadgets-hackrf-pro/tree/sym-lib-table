@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "hackrf")(type "Legacy")(uri "${KIPRJMOD}/kicad/hackrf.lib")(options "")(descr ""))
+  (lib (name "gsg-symbols")(type "Legacy")(uri "${KIPRJMOD}/gsg-kicad-lib/gsg-symbols.lib")(options "")(descr ""))
+  (lib (name "praline")(type "KiCad")(uri "${KIPRJMOD}/praline.kicad_sym")(options "")(descr ""))
+)

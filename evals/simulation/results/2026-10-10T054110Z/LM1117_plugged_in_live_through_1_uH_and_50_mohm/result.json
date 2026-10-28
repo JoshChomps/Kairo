@@ -1,0 +1,101 @@
+{
+ "status": "failed",
+ "unverified_because": [],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "metrics": [],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "U1",
+   "fidelity": "vendor-converted",
+   "source": "Texas Instruments, https://www.ti.com/lit/zip/SNOM488 (LM1117 3P3 Unencrypted PSpice Transient Model), Final 1.1, 17 March 2015, for datasheet SNOS412M",
+   "note": "subcircuit LM1117_N_3P3_TRANS from LM1117_N_3P3_TRANS.LIB; the maker says it covers: a transient model; the file states no scope. Its parameters give dropout against load current, a 1.2 A current limit, a 1.5 V under-voltage lockout, a start-up time, a supply-rejection pole and zero, and 1.5 mohm of output resistance",
+   "sha256": "e25b9813941ecfedfc2f5b6a5c6e7e172aa705b6a8e1d18976810dab3121c740"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "C2",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 2.2e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "D1",
+   "fidelity": "behavioural",
+   "source": "kairo:fixed_drop",
+   "note": "conducts above its stated forward voltage of 2 V and drops that at any current; a real diode's drop rises with current, so currents near turn-on are not represented"
+  },
+  {
+   "ref": "source VIN_5V",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a step from 0 V to 5 V in 1e-06 s behind 0.05 ohm and 1e-06 H"
+  },
+  {
+   "ref": "load 1 on +3V3",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "a 11 ohm resistor (3.3 V / 0.3 A). The design gives the load's current, not how it behaves below nominal voltage"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [
+  "ngspice (accurate): doAnalyses: TRAN:  Timestep too small; time = 3.06049e-06, timestep = 2.5e-19: cause unrecorded.; run simulation(s) aborted",
+  "ngspice (accurate, tightened): doAnalyses: TRAN:  Timestep too small; time = 3.06022e-06, timestep = 1.25e-19: trouble with node \"x_u1.e_u1_e1_int2\"; run simulation(s) aborted"
+ ],
+ "practice": [],
+ "request": {
+  "analysis": {
+   "kind": "tran",
+   "duration": "400us"
+  },
+  "stimuli": [
+   {
+    "net": "VIN_5V",
+    "kind": "step",
+    "value": "5V",
+    "rise": "1us",
+    "resistance": "50mohm",
+    "inductance": "1uH"
+   }
+  ]
+ }
+}

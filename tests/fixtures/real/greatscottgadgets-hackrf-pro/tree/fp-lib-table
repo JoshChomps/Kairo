@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "praline")(type "KiCad")(uri "${KIPRJMOD}/praline.pretty")(options "")(descr ""))
+)

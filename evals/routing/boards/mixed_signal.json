@@ -1,0 +1,1278 @@
+{
+ "design": "mixed_signal",
+ "policy": {
+  "margins": "stated"
+ },
+ "nets": {
+  "GND": {
+   "role": "ground"
+  },
+  "buck_tps54202_VIN_12V": {
+   "role": "power",
+   "voltage": "12V",
+   "tolerance": "5%"
+  },
+  "buck_tps54202_+5V": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "buck_tps54202_SW": {
+   "role": "signal"
+  },
+  "buck_tps54202_BOOT": {
+   "role": "signal"
+  },
+  "buck_tps54202_FB": {
+   "role": "signal"
+  },
+  "charger_bq24075_VBUS": {
+   "role": "power",
+   "voltage": "5V",
+   "tolerance": "5%"
+  },
+  "charger_bq24075_SYS": {
+   "role": "power",
+   "voltage": "4.1V",
+   "tolerance": "30%"
+  },
+  "charger_bq24075_BAT": {
+   "role": "power",
+   "voltage": "3.6V",
+   "tolerance": "17%"
+  },
+  "charger_bq24075_ISET": {
+   "role": "signal"
+  },
+  "charger_bq24075_ILIM": {
+   "role": "signal"
+  },
+  "charger_bq24075_TS": {
+   "role": "signal"
+  },
+  "holdup_mlcc_VIN": {
+   "role": "power",
+   "voltage": "5V",
+   "tolerance": "5%"
+  },
+  "i2c_sensor_+3V3": {
+   "role": "power",
+   "voltage": "3.3V"
+  },
+  "i2c_sensor_SDA": {
+   "role": "signal"
+  },
+  "i2c_sensor_SCL": {
+   "role": "signal"
+  },
+  "ldo_3v3_VIN_5V": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "ldo_3v3_+3V3": {
+   "role": "power",
+   "voltage": "3.3V"
+  },
+  "ldo_3v3_LED_A": {
+   "role": "signal"
+  },
+  "ldo_adjustable_VIN_12V": {
+   "role": "power",
+   "voltage": "12V",
+   "tolerance": "5%"
+  },
+  "ldo_adjustable_+5V": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "ldo_adjustable_ADJ": {
+   "role": "signal"
+  },
+  "ldo_lm1117_VIN_5V": {
+   "role": "power",
+   "voltage": "5V",
+   "tolerance": "5%"
+  },
+  "ldo_lm1117_+3V3": {
+   "role": "power",
+   "voltage": "3.3V"
+  },
+  "ldo_lm1117_LED_A": {
+   "role": "signal"
+  },
+  "led_indicator_+5V": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "led_indicator_LED_A": {
+   "role": "signal"
+  },
+  "mcu_minimum_+5V": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "mcu_minimum_RESET": {
+   "role": "signal"
+  },
+  "opamp_gain_of_two_+3V3": {
+   "role": "power",
+   "voltage": "3.3V"
+  },
+  "opamp_gain_of_two_IN": {
+   "role": "signal"
+  },
+  "opamp_gain_of_two_OUT": {
+   "role": "signal"
+  },
+  "opamp_gain_of_two_FB": {
+   "role": "signal"
+  },
+  "rc_lowpass_IN": {
+   "role": "signal"
+  },
+  "rc_lowpass_OUT": {
+   "role": "signal"
+  },
+  "reverse_polarity_VIN_RAW": {
+   "role": "power",
+   "voltage": "12V"
+  },
+  "reverse_polarity_VIN_PROT": {
+   "role": "power",
+   "voltage": "11.6V"
+  },
+  "usb_c_sink_VBUS": {
+   "role": "power",
+   "voltage": "5V"
+  },
+  "usb_c_sink_CC1": {
+   "role": "signal"
+  },
+  "usb_c_sink_CC2": {
+   "role": "signal"
+  }
+ },
+ "components": {
+  "J101": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J102": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U101": {
+   "lib_id": "Regulator_Switching:TPS54202DDC",
+   "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+   "params": {
+    "regulator": "switching",
+    "mpn": "TPS54202DDC",
+    "v_ref": "0.596V",
+    "v_ref_tolerance": "2.52%",
+    "f_sw": "390kHz",
+    "i_limit": "2.5A",
+    "i_out_max": "2A",
+    "theta_ja": "118.6degC/W",
+    "t_j_max": "125degC"
+   },
+   "source": "TI TPS54202 datasheet SLVSD26C (February 2026): thermal information p.4; electrical characteristics p.5 (limits over -40 to 125 degC: feedback voltage 0.581 V to 0.611 V, switching frequency at least 390 kHz, high-side current limit at least 2.5 A); output voltage equation 3, p.10",
+   "limits": {
+    "f_sw": "min",
+    "i_limit": "min"
+   }
+  },
+  "C101": {
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "params": {
+    "v_rating": "25V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_1206_3216Metric"
+  },
+  "C102": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0603_1608Metric"
+  },
+  "L101": {
+   "lib_id": "Device:L",
+   "value": "15uH",
+   "params": {
+    "tolerance": "20%",
+    "i_sat": "3.5A"
+   },
+   "footprint": "Inductor_SMD:L_Bourns_SRN6045TA"
+  },
+  "C103": {
+   "lib_id": "Device:C_Polarized",
+   "value": "47uF",
+   "params": {
+    "v_rating": "10V",
+    "tolerance": "20%",
+    "dielectric": "polymer",
+    "esr_max": "40mohm"
+   },
+   "footprint": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B"
+  },
+  "R101": {
+   "lib_id": "Device:R",
+   "value": "100k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "R102": {
+   "lib_id": "Device:R",
+   "value": "13.3k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "J201": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J202": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J203": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U201": {
+   "lib_id": "Battery_Management:BQ24075RGT",
+   "footprint": "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
+   "params": {
+    "mpn": "BQ24075RGT",
+    "k_charge": "886V",
+    "k_charge_tolerance": "10.046%",
+    "k_input": "1610V",
+    "k_input_tolerance": "6.833%",
+    "theta_ja": "44.5degC/W"
+   },
+   "source": "TI BQ2407x datasheet SLUS810N (revised October 2021): fast charge current factor KISET 797 to 975 A*ohm, p.13; maximum input current factor KILIM 1500 to 1720 A*ohm for ILIM of 500 mA to 1.5 A, p.12; ICHG = KISET / RISET, equation 2, p.25; IIN-MAX = KILIM / RILIM, equation 1, p.21; pin functions and EN1/EN2 settings, pp.8-9; RGT thermal information, p.11"
+  },
+  "C201": {
+   "lib_id": "Device:C",
+   "value": "1uF",
+   "footprint": "Capacitor_SMD:C_0603_1608Metric",
+   "params": {
+    "tolerance": "10%",
+    "dielectric": "X7R",
+    "v_rating": "16V"
+   }
+  },
+  "C202": {
+   "lib_id": "Device:C",
+   "value": "4.7uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "tolerance": "10%",
+    "dielectric": "X7R",
+    "v_rating": "16V"
+   }
+  },
+  "C203": {
+   "lib_id": "Device:C",
+   "value": "4.7uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "tolerance": "10%",
+    "dielectric": "X7R",
+    "v_rating": "16V"
+   }
+  },
+  "R201": {
+   "lib_id": "Device:R",
+   "value": "1.78k",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "params": {
+    "tolerance": "1%"
+   }
+  },
+  "R202": {
+   "lib_id": "Device:R",
+   "value": "1.62k",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "params": {
+    "tolerance": "1%"
+   }
+  },
+  "R203": {
+   "lib_id": "Device:R",
+   "value": "10k",
+   "footprint": "Resistor_SMD:R_0603_1608Metric",
+   "params": {
+    "tolerance": "1%"
+   }
+  },
+  "J301": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J302": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "C301": {
+   "lib_id": "Device:C",
+   "value": "22uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "mpn": "GRM21BR61A226ME44",
+    "tolerance": "20%",
+    "dielectric": "X5R",
+    "v_rating": "10V"
+   }
+  },
+  "C302": {
+   "lib_id": "Device:C",
+   "value": "22uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "mpn": "GRM21BR61A226ME44",
+    "tolerance": "20%",
+    "dielectric": "X5R",
+    "v_rating": "10V"
+   }
+  },
+  "C303": {
+   "lib_id": "Device:C",
+   "value": "22uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "mpn": "GRM21BR61A226ME44",
+    "tolerance": "20%",
+    "dielectric": "X5R",
+    "v_rating": "10V"
+   }
+  },
+  "C304": {
+   "lib_id": "Device:C",
+   "value": "22uF",
+   "footprint": "Capacitor_SMD:C_0805_2012Metric",
+   "params": {
+    "mpn": "GRM21BR61A226ME44",
+    "tolerance": "20%",
+    "dielectric": "X5R",
+    "v_rating": "10V"
+   }
+  },
+  "J401": {
+   "lib_id": "Connector:Conn_01x04_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+  },
+  "U401": {
+   "lib_id": "Sensor_Temperature:LM75B",
+   "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+  },
+  "R401": {
+   "lib_id": "Device:R",
+   "value": "4.7k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "R402": {
+   "lib_id": "Device:R",
+   "value": "4.7k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "C401": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0603_1608Metric"
+  },
+  "J501": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U501": {
+   "lib_id": "Regulator_Linear:AMS1117-3.3",
+   "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+   "params": {
+    "regulator": "linear",
+    "i_out_max": "1A",
+    "v_dropout": "1.3V",
+    "theta_ja": "90degC/W",
+    "source": "user-stated"
+   }
+  },
+  "C501": {
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X5R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "C502": {
+   "lib_id": "Device:C",
+   "value": "22uF",
+   "params": {
+    "v_rating": "10V",
+    "tolerance": "10%",
+    "dielectric": "X5R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "R501": {
+   "lib_id": "Device:R",
+   "value": "1k",
+   "params": {
+    "p_rating": "0.125W",
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "D501": {
+   "lib_id": "Device:LED",
+   "params": {
+    "v_f": "2.0V"
+   },
+   "footprint": "LED_SMD:LED_0603_1608Metric"
+  },
+  "J601": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U601": {
+   "lib_id": "Regulator_Linear:LM317_SOT-223",
+   "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+   "params": {
+    "regulator": "linear",
+    "v_ref": "1.25V",
+    "v_ref_tolerance": "4%",
+    "i_adj": "100uA",
+    "v_dropout": "3V",
+    "i_out_max": "1.5A",
+    "theta_ja": "66.8degC/W"
+   },
+   "source": "TI LM317 datasheet SLVS044Z (April 2025): thermal information p.7 (legacy chip, SOT-223), electrical characteristics p.8, equation 2 p.16",
+   "limits": {
+    "i_adj": "max",
+    "v_dropout": "max",
+    "i_out_max": "min"
+   }
+  },
+  "C601": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "v_rating": "25V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "C602": {
+   "lib_id": "Device:C",
+   "value": "1uF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "R601": {
+   "lib_id": "Device:R",
+   "value": "240",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "R602": {
+   "lib_id": "Device:R",
+   "value": "715",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "J701": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U701": {
+   "lib_id": "Regulator_Linear:LM1117MP-3.3",
+   "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+   "params": {
+    "regulator": "linear",
+    "mpn": "LM1117MP-3.3",
+    "v_out": "3.3V",
+    "v_out_tolerance": "1.97%",
+    "v_dropout": "1.25V",
+    "i_out_max": "800mA",
+    "i_q": "10mA",
+    "theta_ja": "61.6degC/W",
+    "t_j_max": "125degC",
+    "c_out_min": "10uF",
+    "c_out_esr_min": "0.3ohm",
+    "c_out_esr_max": "22ohm"
+   },
+   "source": "TI LM1117 datasheet SNOS412Q (January 2023): thermal information p.4, electrical characteristics p.5-6 (limits over 0 to 125 degC), output capacitor p.15",
+   "limits": {
+    "i_q": "max",
+    "v_dropout": "max",
+    "i_out_max": "min"
+   }
+  },
+  "C701": {
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X5R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "C702": {
+   "lib_id": "Device:C_Polarized",
+   "value": "22uF",
+   "params": {
+    "v_rating": "10V",
+    "tolerance": "10%",
+    "dielectric": "tantalum",
+    "esr": "1ohm",
+    "esr_min": "0.5ohm",
+    "esr_max": "2ohm"
+   },
+   "footprint": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B"
+  },
+  "R701": {
+   "lib_id": "Device:R",
+   "value": "1k",
+   "params": {
+    "p_rating": "0.125W",
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "D701": {
+   "lib_id": "Device:LED",
+   "params": {
+    "v_f": "2.0V"
+   },
+   "footprint": "LED_SMD:LED_0603_1608Metric"
+  },
+  "J801": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "R801": {
+   "lib_id": "Device:R",
+   "value": "330",
+   "params": {
+    "tolerance": "1%",
+    "p_rating": "0.1W"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "D801": {
+   "lib_id": "Device:LED",
+   "params": {
+    "v_f": "2.0V",
+    "v_f_tolerance": "10%"
+   },
+   "footprint": "LED_SMD:LED_0603_1608Metric"
+  },
+  "J901": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U901": {
+   "lib_id": "MCU_Microchip_ATtiny:ATtiny85-20S",
+   "footprint": "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
+  },
+  "R901": {
+   "lib_id": "Device:R",
+   "value": "10k",
+   "params": {
+    "tolerance": "5%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "C901": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0603_1608Metric"
+  },
+  "J1001": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J1002": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J1003": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "U1001": {
+   "lib_id": "Amplifier_Operational:MCP6001-OT",
+   "footprint": "Package_TO_SOT_SMD:SOT-23-5"
+  },
+  "R1001": {
+   "lib_id": "Device:R",
+   "value": "10k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "R1002": {
+   "lib_id": "Device:R",
+   "value": "10k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "C1001": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_0603_1608Metric"
+  },
+  "J1101": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "R1101": {
+   "lib_id": "Device:R",
+   "value": "1k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "C1101": {
+   "lib_id": "Device:C",
+   "value": "100nF",
+   "params": {
+    "tolerance": "5%",
+    "dielectric": "C0G"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "J1102": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J1201": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "D1201": {
+   "lib_id": "Device:D_Schottky",
+   "params": {
+    "v_f": "0.4V",
+    "i_rating": "1A",
+    "v_rating": "40V"
+   },
+   "footprint": "Diode_SMD:D_SMA"
+  },
+  "C1201": {
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "params": {
+    "v_rating": "25V",
+    "tolerance": "10%",
+    "dielectric": "X7R"
+   },
+   "footprint": "Capacitor_SMD:C_1206_3216Metric"
+  },
+  "J1202": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  },
+  "J1301": {
+   "lib_id": "Connector:USB_C_Receptacle_USB2.0_16P",
+   "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+  },
+  "R1301": {
+   "lib_id": "Device:R",
+   "value": "5.1k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "R1302": {
+   "lib_id": "Device:R",
+   "value": "5.1k",
+   "params": {
+    "tolerance": "1%"
+   },
+   "footprint": "Resistor_SMD:R_0603_1608Metric"
+  },
+  "C1301": {
+   "lib_id": "Device:C",
+   "value": "10uF",
+   "params": {
+    "v_rating": "16V",
+    "tolerance": "10%",
+    "dielectric": "X5R"
+   },
+   "footprint": "Capacitor_SMD:C_0805_2012Metric"
+  },
+  "J1302": {
+   "lib_id": "Connector:Conn_01x02_Pin",
+   "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+  }
+ },
+ "connections": {
+  "buck_tps54202_VIN_12V": [
+   "J101.Pin_1",
+   "U101.VIN",
+   "C101.1"
+  ],
+  "buck_tps54202_SW": [
+   "U101.SW",
+   "L101.1",
+   "C102.2"
+  ],
+  "buck_tps54202_BOOT": [
+   "U101.BOOT",
+   "C102.1"
+  ],
+  "buck_tps54202_+5V": [
+   "L101.2",
+   "C103.1",
+   "R101.1",
+   "J102.Pin_1"
+  ],
+  "buck_tps54202_FB": [
+   "R101.2",
+   "R102.1",
+   "U101.FB"
+  ],
+  "GND": [
+   "J101.Pin_2",
+   "J102.Pin_2",
+   "U101.GND",
+   "C101.2",
+   "C103.2",
+   "R102.2",
+   "J201.Pin_2",
+   "J202.Pin_2",
+   "J203.Pin_2",
+   "U201.~{CE}",
+   "U201.EN1",
+   "U201.VSS*",
+   "U201.SYSOFF",
+   "C201.2",
+   "C202.2",
+   "C203.2",
+   "R201.2",
+   "R202.2",
+   "R203.2",
+   "J301.Pin_2",
+   "C301.2",
+   "C302.2",
+   "C303.2",
+   "C304.2",
+   "J302.Pin_2",
+   "J401.Pin_2",
+   "U401.GND",
+   "U401.A0",
+   "U401.A1",
+   "U401.A2",
+   "C401.2",
+   "J501.Pin_2",
+   "U501.GND",
+   "C501.2",
+   "C502.2",
+   "D501.K",
+   "J601.Pin_2",
+   "C601.2",
+   "C602.2",
+   "R602.2",
+   "J701.Pin_2",
+   "U701.GND",
+   "C701.2",
+   "C702.2",
+   "D701.K",
+   "J801.Pin_2",
+   "D801.K",
+   "J901.Pin_2",
+   "U901.GND",
+   "C901.2",
+   "J1003.Pin_2",
+   "J1001.Pin_2",
+   "J1002.Pin_2",
+   "U1001.V-",
+   "R1002.2",
+   "C1001.2",
+   "J1101.Pin_2",
+   "C1101.2",
+   "J1102.Pin_2",
+   "J1201.Pin_2",
+   "C1201.2",
+   "J1202.Pin_2",
+   "J1301.GND*",
+   "J1301.SHIELD",
+   "R1301.2",
+   "R1302.2",
+   "C1301.2",
+   "J1302.Pin_2"
+  ],
+  "charger_bq24075_VBUS": [
+   "J201.Pin_1",
+   "U201.IN",
+   "U201.EN2",
+   "C201.1"
+  ],
+  "charger_bq24075_SYS": [
+   "U201.OUT*",
+   "C202.1",
+   "J203.Pin_1"
+  ],
+  "charger_bq24075_BAT": [
+   "U201.BAT*",
+   "C203.1",
+   "J202.Pin_1"
+  ],
+  "charger_bq24075_ISET": [
+   "U201.ISET",
+   "R201.1"
+  ],
+  "charger_bq24075_ILIM": [
+   "U201.ILIM",
+   "R202.1"
+  ],
+  "charger_bq24075_TS": [
+   "U201.TS",
+   "R203.1"
+  ],
+  "holdup_mlcc_VIN": [
+   "J301.Pin_1",
+   "C301.1",
+   "C302.1",
+   "C303.1",
+   "C304.1",
+   "J302.Pin_1"
+  ],
+  "i2c_sensor_+3V3": [
+   "J401.Pin_1",
+   "U401.+Vs",
+   "R401.1",
+   "R402.1",
+   "C401.1"
+  ],
+  "i2c_sensor_SDA": [
+   "J401.Pin_3",
+   "U401.SDA",
+   "R401.2"
+  ],
+  "i2c_sensor_SCL": [
+   "J401.Pin_4",
+   "U401.SCL",
+   "R402.2"
+  ],
+  "ldo_3v3_VIN_5V": [
+   "J501.Pin_1",
+   "U501.VI",
+   "C501.1"
+  ],
+  "ldo_3v3_+3V3": [
+   "U501.VO",
+   "C502.1",
+   "R501.1"
+  ],
+  "ldo_3v3_LED_A": [
+   "R501.2",
+   "D501.A"
+  ],
+  "ldo_adjustable_VIN_12V": [
+   "J601.Pin_1",
+   "U601.VI",
+   "C601.1"
+  ],
+  "ldo_adjustable_+5V": [
+   "U601.VO",
+   "C602.1",
+   "R601.1"
+  ],
+  "ldo_adjustable_ADJ": [
+   "U601.ADJ",
+   "R601.2",
+   "R602.1"
+  ],
+  "ldo_lm1117_VIN_5V": [
+   "J701.Pin_1",
+   "U701.VI",
+   "C701.1"
+  ],
+  "ldo_lm1117_+3V3": [
+   "U701.VO",
+   "C702.1",
+   "R701.1"
+  ],
+  "ldo_lm1117_LED_A": [
+   "R701.2",
+   "D701.A"
+  ],
+  "led_indicator_+5V": [
+   "J801.Pin_1",
+   "R801.1"
+  ],
+  "led_indicator_LED_A": [
+   "R801.2",
+   "D801.A"
+  ],
+  "mcu_minimum_+5V": [
+   "J901.Pin_1",
+   "U901.VCC",
+   "R901.1",
+   "C901.1"
+  ],
+  "mcu_minimum_RESET": [
+   "U901.~{RESET}/PB5",
+   "R901.2"
+  ],
+  "opamp_gain_of_two_+3V3": [
+   "J1003.Pin_1",
+   "U1001.V+",
+   "C1001.1"
+  ],
+  "opamp_gain_of_two_IN": [
+   "J1001.Pin_1",
+   "U1001.+"
+  ],
+  "opamp_gain_of_two_OUT": [
+   "U1001.1",
+   "R1001.1",
+   "J1002.Pin_1"
+  ],
+  "opamp_gain_of_two_FB": [
+   "U1001.-",
+   "R1001.2",
+   "R1002.1"
+  ],
+  "rc_lowpass_IN": [
+   "J1101.Pin_1",
+   "R1101.1"
+  ],
+  "rc_lowpass_OUT": [
+   "R1101.2",
+   "C1101.1",
+   "J1102.Pin_1"
+  ],
+  "reverse_polarity_VIN_RAW": [
+   "J1201.Pin_1",
+   "D1201.A"
+  ],
+  "reverse_polarity_VIN_PROT": [
+   "D1201.K",
+   "C1201.1",
+   "J1202.Pin_1"
+  ],
+  "usb_c_sink_VBUS": [
+   "J1301.VBUS*",
+   "C1301.1",
+   "J1302.Pin_1"
+  ],
+  "usb_c_sink_CC1": [
+   "J1301.CC1",
+   "R1301.1"
+  ],
+  "usb_c_sink_CC2": [
+   "J1301.CC2",
+   "R1302.1"
+  ]
+ },
+ "no_connect": [
+  "U101.EN",
+  "U201.~{PGOOD}",
+  "U201.~{CHG}",
+  "U201.TMR",
+  "U401.O.S.",
+  "U901.XTAL1/PB3",
+  "U901.XTAL2/PB4",
+  "U901.AREF/PB0",
+  "U901.PB1",
+  "U901.PB2",
+  "J1301.D+*",
+  "J1301.D-*",
+  "J1301.SBU1",
+  "J1301.SBU2"
+ ],
+ "blocks": {
+  "buck_tps54202_power_in": [
+   "J101",
+   "C101"
+  ],
+  "buck_tps54202_regulator": [
+   "U101",
+   "C102",
+   "L101"
+  ],
+  "buck_tps54202_output": [
+   "C103",
+   "R101",
+   "R102",
+   "J102"
+  ],
+  "charger_bq24075_input": [
+   "J201",
+   "C201"
+  ],
+  "charger_bq24075_charger": [
+   "U201",
+   "R201",
+   "R202",
+   "R203"
+  ],
+  "charger_bq24075_battery": [
+   "J202",
+   "C203"
+  ],
+  "charger_bq24075_system": [
+   "J203",
+   "C202"
+  ],
+  "holdup_mlcc_input": [
+   "J301"
+  ],
+  "holdup_mlcc_reservoir": [
+   "C301",
+   "C302",
+   "C303",
+   "C304"
+  ],
+  "holdup_mlcc_output": [
+   "J302"
+  ],
+  "i2c_sensor_bus": [
+   "J401",
+   "R401",
+   "R402"
+  ],
+  "i2c_sensor_sensor": [
+   "U401",
+   "C401"
+  ],
+  "ldo_3v3_power_in": [
+   "J501",
+   "C501"
+  ],
+  "ldo_3v3_regulator": [
+   "U501",
+   "C502"
+  ],
+  "ldo_3v3_indicator": [
+   "R501",
+   "D501"
+  ],
+  "ldo_adjustable_power_in": [
+   "J601",
+   "C601"
+  ],
+  "ldo_adjustable_regulator": [
+   "U601",
+   "R601",
+   "R602",
+   "C602"
+  ],
+  "ldo_lm1117_power_in": [
+   "J701",
+   "C701"
+  ],
+  "ldo_lm1117_regulator": [
+   "U701",
+   "C702"
+  ],
+  "ldo_lm1117_indicator": [
+   "R701",
+   "D701"
+  ],
+  "led_indicator_input": [
+   "J801"
+  ],
+  "led_indicator_indicator": [
+   "R801",
+   "D801"
+  ],
+  "mcu_minimum_power": [
+   "J901",
+   "C901"
+  ],
+  "mcu_minimum_mcu": [
+   "U901",
+   "R901"
+  ],
+  "opamp_gain_of_two_input": [
+   "J1003",
+   "J1001"
+  ],
+  "opamp_gain_of_two_amplifier": [
+   "U1001",
+   "R1001",
+   "R1002",
+   "C1001"
+  ],
+  "opamp_gain_of_two_output": [
+   "J1002"
+  ],
+  "rc_lowpass_input": [
+   "J1101"
+  ],
+  "rc_lowpass_filter": [
+   "R1101",
+   "C1101"
+  ],
+  "rc_lowpass_output": [
+   "J1102"
+  ],
+  "reverse_polarity_input": [
+   "J1201",
+   "D1201"
+  ],
+  "reverse_polarity_output": [
+   "C1201",
+   "J1202"
+  ],
+  "usb_c_sink_input": [
+   "J1301",
+   "R1301",
+   "R1302"
+  ],
+  "usb_c_sink_output": [
+   "C1301",
+   "J1302"
+  ]
+ },
+ "placement": {
+  "order": [
+   "buck_tps54202_power_in",
+   "buck_tps54202_regulator",
+   "buck_tps54202_output",
+   "charger_bq24075_input",
+   "charger_bq24075_charger",
+   "charger_bq24075_battery",
+   "charger_bq24075_system",
+   "holdup_mlcc_input",
+   "holdup_mlcc_reservoir",
+   "holdup_mlcc_output",
+   "i2c_sensor_bus",
+   "i2c_sensor_sensor",
+   "ldo_3v3_power_in",
+   "ldo_3v3_regulator",
+   "ldo_3v3_indicator",
+   "ldo_adjustable_power_in",
+   "ldo_adjustable_regulator",
+   "ldo_lm1117_power_in",
+   "ldo_lm1117_regulator",
+   "ldo_lm1117_indicator",
+   "led_indicator_input",
+   "led_indicator_indicator",
+   "mcu_minimum_power",
+   "mcu_minimum_mcu",
+   "opamp_gain_of_two_input",
+   "opamp_gain_of_two_amplifier",
+   "opamp_gain_of_two_output",
+   "rc_lowpass_input",
+   "rc_lowpass_filter",
+   "rc_lowpass_output",
+   "reverse_polarity_input",
+   "reverse_polarity_output",
+   "usb_c_sink_input",
+   "usb_c_sink_output"
+  ]
+ },
+ "board": {
+  "width": "70mm",
+  "height": "55mm",
+  "copper_layers": 2,
+  "clearance": "0.4mm",
+  "sides": {
+   "buck_tps54202_power_in": "north-west",
+   "buck_tps54202_regulator": "north-west",
+   "buck_tps54202_output": "north-west",
+   "charger_bq24075_input": "center-north",
+   "charger_bq24075_charger": "center-north",
+   "charger_bq24075_battery": "center-north",
+   "charger_bq24075_system": "center-north",
+   "holdup_mlcc_input": "north-east",
+   "holdup_mlcc_reservoir": "north-east",
+   "holdup_mlcc_output": "north-east",
+   "i2c_sensor_bus": "west",
+   "i2c_sensor_sensor": "west",
+   "ldo_3v3_power_in": "center-middle",
+   "ldo_3v3_regulator": "center-middle",
+   "ldo_3v3_indicator": "center-middle",
+   "ldo_adjustable_power_in": "east",
+   "ldo_adjustable_regulator": "east",
+   "ldo_lm1117_power_in": "south-west",
+   "ldo_lm1117_regulator": "south-west",
+   "ldo_lm1117_indicator": "south-west",
+   "led_indicator_input": "center-south",
+   "led_indicator_indicator": "center-south",
+   "mcu_minimum_power": "south-east",
+   "mcu_minimum_mcu": "south-east",
+   "opamp_gain_of_two_input": "north-west",
+   "opamp_gain_of_two_amplifier": "north-west",
+   "opamp_gain_of_two_output": "north-west",
+   "rc_lowpass_input": "center-north",
+   "rc_lowpass_filter": "center-north",
+   "rc_lowpass_output": "center-north",
+   "reverse_polarity_input": "north-east",
+   "reverse_polarity_output": "north-east",
+   "usb_c_sink_input": "west",
+   "usb_c_sink_output": "west"
+  },
+  "net_classes": [
+   {
+    "name": "Default",
+    "track": "0.25mm",
+    "clearance": "0.2mm",
+    "via_diameter": "0.6mm",
+    "via_drill": "0.3mm"
+   }
+  ],
+  "rules": {
+   "min_track": "0.15mm",
+   "min_clearance": "0.15mm",
+   "min_drill": "0.15mm",
+   "min_via_diameter": "0.25mm",
+   "min_annular": "0.05mm",
+   "min_hole_clearance": "0.2mm",
+   "min_hole_to_hole": "0.2mm",
+   "copper_edge_clearance": "0.2mm"
+  }
+ }
+}

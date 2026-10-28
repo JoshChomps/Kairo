@@ -1,0 +1,201 @@
+{
+ "status": "checked",
+ "unverified_because": [],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "limits_basis": "stated values",
+ "on_default_margins": [],
+ "metrics": [
+  {
+   "metric": "start",
+   "where": "IN",
+   "value": 0.0,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "final",
+   "where": "IN",
+   "value": 3.3,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "peak",
+   "where": "IN",
+   "value": 3.3,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "lowest",
+   "where": "IN",
+   "value": 0.0,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "overshoot",
+   "where": "IN",
+   "value": 0.0,
+   "unit": "%",
+   "status": "checked"
+  },
+  {
+   "metric": "rise_time",
+   "where": "IN",
+   "value": 8e-07,
+   "unit": "s",
+   "status": "checked"
+  },
+  {
+   "metric": "settling_time",
+   "where": "IN",
+   "value": 9.9e-07,
+   "unit": "s",
+   "status": "checked"
+  },
+  {
+   "metric": "start",
+   "where": "OUT",
+   "value": 0.0,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "final",
+   "where": "OUT",
+   "value": 3.29985,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "peak",
+   "where": "OUT",
+   "value": 3.29985,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "lowest",
+   "where": "OUT",
+   "value": 0.0,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "overshoot",
+   "where": "OUT",
+   "value": 0.0,
+   "unit": "%",
+   "status": "checked"
+  },
+  {
+   "metric": "rise_time",
+   "where": "OUT",
+   "value": 0.000219682,
+   "unit": "s",
+   "status": "checked"
+  },
+  {
+   "metric": "settling_time",
+   "where": "OUT",
+   "value": 0.000460566,
+   "unit": "s",
+   "status": "checked"
+  },
+  {
+   "metric": "peak_current",
+   "where": "source IN",
+   "value": 0.00328356,
+   "unit": "A",
+   "status": "checked"
+  }
+ ],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-07 F; C0G does not lose capacitance with DC bias; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "J2",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "source IN",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a step from 0 V to 3.3 V in 1e-06 s, with no impedance"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [],
+ "practice": [],
+ "request": {
+  "analysis": {
+   "kind": "tran",
+   "duration": "1ms"
+  },
+  "stimuli": [
+   {
+    "net": "IN",
+    "kind": "step",
+    "value": "3.3V",
+    "rise": "1us"
+   }
+  ]
+ }
+}

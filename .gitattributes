@@ -1,0 +1,3 @@
+# Fixtures are files KiCad wrote (with CRLF line endings on Windows) and are
+# compared byte for byte, so git must store and check them out unchanged.
+tests/fixtures/** -text

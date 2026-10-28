@@ -1,0 +1,266 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "e809fe01-d701-4389-8dab-ece88bae4db6")
+	(paper "A3")
+	(title_block
+		(title "BMC Reference OSM ")
+		(date "2025-08-14")
+		(rev "1.0.0")
+	)
+	(lib_symbols)
+	(hierarchical_label "XSPI{QSPI}"
+		(shape bidirectional)
+		(at 96.52 208.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "077b8470-d783-4f68-8c8b-13d9590f1d34")
+	)
+	(hierarchical_label "PCIe_{x1EP}{PCIe}"
+		(shape bidirectional)
+		(at 96.52 160.02 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1afb2b8c-7f5a-4655-a34a-ac648a7bcea9")
+	)
+	(hierarchical_label "SDIO{SDIO}"
+		(shape bidirectional)
+		(at 96.52 231.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "343bcde6-a3b3-4be5-87c8-ad149a747fe5")
+	)
+	(hierarchical_label "UART1{UART}"
+		(shape bidirectional)
+		(at 96.52 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "359d4bf6-8ccb-4d4f-b9c0-73f8f7d72a52")
+	)
+	(hierarchical_label "DDR{LPDDR4}"
+		(shape bidirectional)
+		(at 96.52 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3feebe42-03ba-44a9-9ad5-e3261ef053f1")
+	)
+	(hierarchical_label "DSI{DSI}"
+		(shape output)
+		(at 96.52 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "501618f5-5b1f-42a0-ab1f-611533da230e")
+	)
+	(hierarchical_label "UART3{UART}"
+		(shape bidirectional)
+		(at 96.52 218.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5021ba4f-56cd-421d-99ba-1faec067e24b")
+	)
+	(hierarchical_label "PCIe_{x1RP}{PCIe}"
+		(shape bidirectional)
+		(at 96.52 157.48 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5406d4af-7563-44ef-8cb6-5bfa821e32b2")
+	)
+	(hierarchical_label "I3C{I3C}"
+		(shape bidirectional)
+		(at 124.46 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5a63d090-81d3-4273-bd76-d9340d2057d7")
+	)
+	(hierarchical_label "USBSS{USBSS}"
+		(shape bidirectional)
+		(at 96.52 147.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "65793e9e-f178-4a98-8dcf-d3b296fafb7d")
+	)
+	(hierarchical_label "I2C{I2C}"
+		(shape bidirectional)
+		(at 124.46 210.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c38c6e7-fe0f-4aa1-9465-ed4069c76afe")
+	)
+	(hierarchical_label "FP_RGMII{RGMII}"
+		(shape bidirectional)
+		(at 96.52 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8188fa19-6bb5-48a2-94ad-39e4a973904e")
+	)
+	(hierarchical_label "USB{USB}"
+		(shape bidirectional)
+		(at 96.52 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "90286cc0-7a88-462c-b45e-9dbdcd8257c4")
+	)
+	(hierarchical_label "HPM_SGMII{SGMII}"
+		(shape bidirectional)
+		(at 96.52 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "928b008a-3a72-4241-9794-0a3088b6a76b")
+	)
+	(hierarchical_label "JTAG_{IN}{JTAG}"
+		(shape bidirectional)
+		(at 96.52 241.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9996ed9d-f6e4-4709-adfb-0ea6a442df2d")
+	)
+	(hierarchical_label "CLK_{REFOUT}{PCIeREFCLK}"
+		(shape input)
+		(at 96.52 162.56 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a3cc2220-14e5-41a2-a6b2-69a5c2d8cafe")
+	)
+	(hierarchical_label "SPI{SPI}"
+		(shape bidirectional)
+		(at 121.92 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b629836b-3bfa-46be-92f0-63c523eb7a56")
+	)
+	(hierarchical_label "UART4{UART}"
+		(shape bidirectional)
+		(at 96.52 220.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c3d4d6cf-1285-4bde-9fcd-f48f67df43a1")
+	)
+	(hierarchical_label "JTAG_{OUT}{JTAG}"
+		(shape bidirectional)
+		(at 96.52 245.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e355b3e6-d4b1-4bdc-a5c2-9ac97f27d059")
+	)
+	(hierarchical_label "UART0{UART}"
+		(shape bidirectional)
+		(at 96.52 210.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e55914f8-3adf-44cf-a27f-ac19d513de46")
+	)
+	(hierarchical_label "NC-SI{NC-SI}"
+		(shape bidirectional)
+		(at 96.52 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "edc28b2c-95ae-4947-b65c-54d949c9cccd")
+	)
+	(hierarchical_label "CLK_{REFIN}{PCIeREFCLK}"
+		(shape output)
+		(at 96.52 165.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f947528b-f5d6-4f9c-8d07-39e87bb37ec3")
+	)
+	(hierarchical_label "UART2{UART}"
+		(shape bidirectional)
+		(at 96.52 215.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fd82fd4c-c680-4e51-88d4-2ec4315eb236")
+	)
+)

@@ -1,0 +1,2990 @@
+{
+ "engines": {
+  "ngspice": "47",
+  "xyce": "7.10.0"
+ },
+ "profiles": {
+  "default-like": {
+   "settings": {
+    "profile": "default-like",
+    "reltol": 0.001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 50,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": false,
+     "points": 81,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39299210785891997,
+       "error": 0.0004769291635216555,
+       "budget": 0.0001,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6319847049025871,
+       "error": 0.0001356699204020373,
+       "budget": 0.0001,
+       "within": false
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8647276823452607,
+       "error": 6.303298724141815e-05,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932892674349494,
+       "error": 2.721722724507991e-05,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": false,
+     "points": 106,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8415176028968463,
+       "error": 0.026345184989435166,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.5800164578604483,
+       "error": 0.024140379039487847,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6528300609714766,
+       "error": 0.01819231508120822,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0499169178451733,
+       "error": 0.03054135455676188,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 1.0050265408772783,
+       "error": 0.011437280022048912,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6273011847480909,
+       "error": 0.022622119053752554,
+       "budget": 0.0002,
+       "within": false
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071090247696385,
+       "error": 3.142848169213064e-09,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928909752303613,
+       "error": 3.142848168935508e-06,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": false,
+     "points": 85,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39323222620940884,
+       "error": 0.00023681081303278395,
+       "budget": 0.0001,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321753933632456,
+       "error": 5.501854025646846e-05,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646836904640062,
+       "error": 1.9041105986938867e-05,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932859035182503,
+       "error": 2.385331054599593e-05,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": false,
+     "points": 193,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8667978019672148,
+       "error": 0.0010649859190666744,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6039446584719825,
+       "error": 0.0002121784279536243,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6343121797719484,
+       "error": 0.0003255661183199088,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0808335919575736,
+       "error": 0.00037531955563840924,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.994473923959081,
+       "error": 0.0008846631038516017,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6040835532049438,
+       "error": 0.0005955124893946007,
+       "budget": 0.0002,
+       "within": false
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307128481328474,
+       "error": 1.6313710666203407e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928715186715266,
+       "error": 1.631371066568299e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "reltol 1e-3, 500 steps": {
+   "settings": {
+    "profile": "reltol 1e-3, 500 steps",
+    "reltol": 0.001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 500,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 528,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346474615809746,
+       "error": 4.290864344169698e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321193052107187,
+       "error": 1.0696122704212385e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646653833932527,
+       "error": 7.340352334850309e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932623293984794,
+       "error": 2.7919077505433876e-07,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": false,
+     "points": 529,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8662010036765452,
+       "error": 0.0016617842097362834,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6047651031694725,
+       "error": 0.0006082662695363616,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6342012908696744,
+       "error": 0.00043645502059397323,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0807347158690765,
+       "error": 0.0002764434671413962,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935659000569338,
+       "error": 2.3360798295568586e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6048711192785126,
+       "error": 0.00019205358417417884,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071090247696385,
+       "error": 3.142848169213064e-09,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928909752303613,
+       "error": 3.142848168935508e-06,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 526,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346489858240186,
+       "error": 4.1384400397692644e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321193976603442,
+       "error": 9.771626449106563e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646654174032786,
+       "error": 7.680452593916698e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932623296532569,
+       "error": 2.794455525867434e-07,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": false,
+     "points": 532,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8668880734007876,
+       "error": 0.0009747144854939105,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6042731931266578,
+       "error": 0.00011635622672168111,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6341292612094175,
+       "error": 0.0005084846808508514,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0807564234069276,
+       "error": 0.00029815100499241964,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935633551639186,
+       "error": 2.5905691310779133e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6049348740705538,
+       "error": 0.0002558083762154162,
+       "budget": 0.0002,
+       "within": false
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307128481328474,
+       "error": 1.6313710666203407e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928715186715266,
+       "error": 1.631371066568299e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "reltol 1e-4, 500 steps": {
+   "settings": {
+    "profile": "reltol 1e-4, 500 steps",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 500,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 532,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.3934643984927244,
+       "error": 4.638529717215789e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321190943418894,
+       "error": 1.2804810997080196e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.864665305819592,
+       "error": 6.564615727677747e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932623294034456,
+       "error": 2.791957413039725e-07,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": false,
+     "points": 532,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8661804348789637,
+       "error": 0.0016823530073177828,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6036579388857886,
+       "error": 0.0004988980141475974,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6343079767336531,
+       "error": 0.00032976915661520056,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0807110126201143,
+       "error": 0.00025274021817911496,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935678110678003,
+       "error": 2.1449787429017597e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6054525095546062,
+       "error": 0.0007734438602677862,
+       "budget": 0.0002,
+       "within": false
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071124011816,
+       "error": 2.335637924386069e-10,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928875988183998,
+       "error": 2.3356379252881254e-07,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 526,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346489858240186,
+       "error": 4.1384400397692644e-06,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321193976603442,
+       "error": 9.771626449106563e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646654174032786,
+       "error": 7.680452593916698e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932623296532569,
+       "error": 2.794455525867434e-07,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": true,
+     "points": 729,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8677674918634029,
+       "error": 9.529602287861039e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.604125076862983,
+       "error": 3.176003695326557e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346348545350076,
+       "error": 2.891355260770112e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.080522046217448,
+       "error": 6.377381551292416e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935815910589523,
+       "error": 7.669796277087748e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6047241175038103,
+       "error": 4.5051809471896576e-05,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307131856783727,
+       "error": 1.968916591918446e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928681432162741,
+       "error": 1.9689165918213014e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "reltol 1e-4, 2000 steps": {
+   "settings": {
+    "profile": "reltol 1e-4, 2000 steps",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 2030,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346874940679116,
+       "error": 2.8761565046275805e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321202962434876,
+       "error": 7.857950146128445e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646906509937,
+       "error": 4.129297448418612e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.99326206716382,
+       "error": 1.6956115733712807e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": true,
+     "points": 2030,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8677436139370539,
+       "error": 0.00011917394922755786,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.604176903058222,
+       "error": 2.0066158285869662e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346156624158543,
+       "error": 2.2083474414014148e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.080475091947964,
+       "error": 1.681954602883451e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935876147419136,
+       "error": 1.6461133157674723e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046801402406026,
+       "error": 1.0745462641903458e-06,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071124011816,
+       "error": 2.335637924386069e-10,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928875988183998,
+       "error": 2.3356379252881254e-07,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 2024,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346878060727114,
+       "error": 2.564151704853579e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321203151675239,
+       "error": 5.965546523434284e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646976127292,
+       "error": 4.825471000557968e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932620671677639,
+       "error": 1.6960059578963183e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": true,
+     "points": 2043,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8677803874737692,
+       "error": 8.240041251228458e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6041472092116034,
+       "error": 9.627688332791706e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346079581141936,
+       "error": 2.978777607476335e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0804770306819218,
+       "error": 1.8758279986652582e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.993587426737408,
+       "error": 1.8341178213976406e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046456910103308,
+       "error": 3.337468400754773e-05,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307131856783727,
+       "error": 1.968916591918446e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928681432162741,
+       "error": 1.9689165918213014e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "reltol 1e-5, 8000 steps": {
+   "settings": {
+    "profile": "reltol 1e-5, 8000 steps",
+    "reltol": 1e-05,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 8000,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 8035,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.3934690174094948,
+       "error": 1.96129468221784e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321203689808995,
+       "error": 5.842089589869204e-09,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646513279076,
+       "error": 1.969888363539951e-09,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932620507289792,
+       "error": 5.2127491212417e-10,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": true,
+     "points": 8036,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8678434747552926,
+       "error": 1.931313098890719e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6041582413587172,
+       "error": 1.404458781051332e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346367703136513,
+       "error": 9.75576617046059e-07,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0804591651899424,
+       "error": 8.927880073006378e-07,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935891797088543,
+       "error": 8.114637506384526e-08,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046814849887141,
+       "error": 2.4192943757217478e-06,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071124011816,
+       "error": 2.335637924386069e-10,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928875988183998,
+       "error": 2.3356379252881254e-07,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 8022,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.3934690211105002,
+       "error": 1.5911941431134835e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321203712256324,
+       "error": 3.5973567458214006e-09,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646521535813,
+       "error": 2.7955621151320997e-09,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932620507288579,
+       "error": 5.211535647475785e-10,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": true,
+     "points": 8028,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8678440497051152,
+       "error": 1.87381811662668e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6041552617465422,
+       "error": 1.5751533939400986e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346354975574803,
+       "error": 2.248332788057361e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.080459451727144,
+       "error": 1.179325208822135e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935891560119235,
+       "error": 1.0484330581483903e-07,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046780694581555,
+       "error": 9.962361828819155e-07,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307131856783727,
+       "error": 1.968916591918446e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928681432162741,
+       "error": 1.9689165918213014e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "reltol 1e-4, 2000 steps, gear": {
+   "settings": {
+    "profile": "reltol 1e-4, 2000 steps, gear",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "gear",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 2030,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.3934692196471218,
+       "error": 1.8262468015617372e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321208695859393,
+       "error": 4.947629501650397e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.864665113563664,
+       "error": 4.6420564481230997e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932621198707915,
+       "error": 6.966308718769909e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": false,
+     "points": 2031,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8674608899208369,
+       "error": 0.00040189796544454204,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.604259274637616,
+       "error": 0.00010243773767992792,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6344509954621503,
+       "error": 0.0001867504281179988,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0805412937753625,
+       "error": 8.302137342730553e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935823922864828,
+       "error": 6.868568746543069e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6048135834510269,
+       "error": 0.0001345177566884903,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071124011816,
+       "error": 2.335637924386069e-10,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928875988183998,
+       "error": 2.3356379252881254e-07,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 2024,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.3934692509428187,
+       "error": 2.1392037707901324e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321208885677168,
+       "error": 5.137447276482021e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646651205466479,
+       "error": 4.7118862867012723e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932621198829353,
+       "error": 6.967523102918705e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": false,
+     "points": 2022,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8674612472345427,
+       "error": 0.0004015406517388076,
+       "budget": 0.0002,
+       "within": false
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.604258108919113,
+       "error": 0.0001012720191768679,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6344497439919549,
+       "error": 0.00018800189831347236,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0805415746617928,
+       "error": 8.330225985764272e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935823691897339,
+       "error": 6.891665495500909e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6048154438792042,
+       "error": 0.0001363781848657819,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307131856783727,
+       "error": 1.968916591918446e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928681432162741,
+       "error": 1.9689165918213014e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  },
+  "accurate": {
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "results": {
+    "ngspice: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 3.9999999999999996,
+       "error": 4.440892098500626e-16,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.0009999999999999992,
+       "error": 8.673617379884035e-19,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC step": {
+     "within_budget": true,
+     "points": 2030,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346874940679116,
+       "error": 2.8761565046275805e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321202962434876,
+       "error": 7.857950146128445e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646906509937,
+       "error": 4.129297448418612e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.99326206716382,
+       "error": 1.6956115733712807e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: underdamped RLC step": {
+     "within_budget": true,
+     "points": 2030,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8677436139370539,
+       "error": 0.00011917394922755786,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.604176903058222,
+       "error": 2.0066158285869662e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346156624158543,
+       "error": 2.2083474414014148e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.080475091947964,
+       "error": 1.681954602883451e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.9935876147419136,
+       "error": 1.6461133157674723e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046801402406026,
+       "error": 1.0745462641903458e-06,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344580936,
+       "error": 0.0,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681746,
+       "error": 8.881784197001252e-16,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178886,
+       "error": 0.00038085867807691187,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967317,
+       "error": 3.154032683028163e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "ngspice: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.0043071124011816,
+       "error": 2.335637924386069e-10,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928875988183998,
+       "error": 2.3356379252881254e-07,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    },
+    "xyce: resistor ladder": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "v(b)",
+       "exact": 9.0,
+       "measured": 9.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(c)",
+       "exact": 7.0,
+       "measured": 7.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "v(d)",
+       "exact": 4.0,
+       "measured": 4.0,
+       "error": 0.0,
+       "budget": 1e-09,
+       "within": true
+      },
+      {
+       "label": "i(v1)",
+       "exact": -0.001,
+       "measured": -0.001,
+       "error": 0.0,
+       "budget": 1e-12,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC step": {
+     "within_budget": true,
+     "points": 2024,
+     "checks": [
+      {
+       "label": "v(out) at 0.5 ms",
+       "exact": 0.3934690370224416,
+       "measured": 0.39346878060727114,
+       "error": 2.564151704853579e-07,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1 ms",
+       "exact": 0.6321203748229891,
+       "measured": 0.6321203151675239,
+       "error": 5.965546523434284e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 2 ms",
+       "exact": 0.8646646493580192,
+       "measured": 0.8646646976127292,
+       "error": 4.825471000557968e-08,
+       "budget": 0.0001,
+       "within": true
+      },
+      {
+       "label": "v(out) at 5 ms",
+       "exact": 0.9932620502077043,
+       "measured": 0.9932620671677639,
+       "error": 1.6960059578963183e-08,
+       "budget": 0.0001,
+       "within": true
+      }
+     ]
+    },
+    "xyce: underdamped RLC step": {
+     "within_budget": true,
+     "points": 2043,
+     "checks": [
+      {
+       "label": "v(out) at 50 us",
+       "exact": 0.8678627878862815,
+       "measured": 0.8677803874737692,
+       "error": 8.240041251228458e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 99.3 us",
+       "exact": 1.6041568368999362,
+       "measured": 1.6041472092116034,
+       "error": 9.627688332791706e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 200 us",
+       "exact": 0.6346377458902683,
+       "measured": 0.6346079581141936,
+       "error": 2.978777607476335e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 500 us",
+       "exact": 1.0804582724019351,
+       "measured": 1.0804770306819218,
+       "error": 1.8758279986652582e-05,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "v(out) at 1000 us",
+       "exact": 0.9935892608552294,
+       "measured": 0.993587426737408,
+       "error": 1.8341178213976406e-06,
+       "budget": 0.0002,
+       "within": true
+      },
+      {
+       "label": "overshoot",
+       "exact": 0.6046790656943384,
+       "measured": 0.6046456910103308,
+       "error": 3.337468400754773e-05,
+       "budget": 0.0002,
+       "within": true
+      }
+     ]
+    },
+    "xyce: RC low-pass": {
+     "within_budget": true,
+     "points": 251,
+     "checks": [
+      {
+       "label": "gain at 100 Hz, dB",
+       "exact": -0.017111504344580936,
+       "measured": -0.017111504344581904,
+       "error": 9.679756995950584e-16,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 100 Hz, degrees",
+       "exact": -3.5952737798681755,
+       "measured": -3.5952737798681773,
+       "error": 1.7763568394002505e-15,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 1591.55 Hz, dB",
+       "exact": -3.0102999566398116,
+       "measured": -3.0106808153178917,
+       "error": 0.0003808586780800205,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 1591.55 Hz, degrees",
+       "exact": -45.0,
+       "measured": -44.99996845967319,
+       "error": 3.1540326808965347e-05,
+       "budget": 0.02,
+       "within": true
+      },
+      {
+       "label": "gain at 20000 Hz, dB",
+       "exact": -22.011612586390065,
+       "measured": -22.011618063199442,
+       "error": 5.476809377569225e-06,
+       "budget": 0.002,
+       "within": true
+      },
+      {
+       "label": "phase at 20000 Hz, degrees",
+       "exact": -85.45013469087891,
+       "measured": -85.449906004986,
+       "error": 0.0002286858929068103,
+       "budget": 0.02,
+       "within": true
+      }
+     ]
+    },
+    "xyce: diode and resistor": {
+     "within_budget": true,
+     "points": 1,
+     "checks": [
+      {
+       "label": "diode current",
+       "exact": 0.004307112167617808,
+       "measured": 0.004307131856783727,
+       "error": 1.968916591918446e-08,
+       "budget": 2e-08,
+       "within": true
+      },
+      {
+       "label": "diode voltage",
+       "exact": 0.6928878323821923,
+       "measured": 0.6928681432162741,
+       "error": 1.9689165918213014e-05,
+       "budget": 2e-05,
+       "within": true
+      }
+     ]
+    }
+   }
+  }
+ }
+}

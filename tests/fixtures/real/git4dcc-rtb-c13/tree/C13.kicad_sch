@@ -1,0 +1,189 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "e60147c1-60cd-4ee5-8632-0ea3e5535221")
+	(paper "A4")
+	(title_block
+		(title "RTB C13 Module")
+		(date "2025-10-14")
+		(rev "3")
+		(company "Frank Schumacher")
+		(comment 1 "Track Sensor")
+	)
+	(lib_symbols)
+	(sheet
+		(at 142.24 53.34)
+		(size 44.45 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "00000000-0000-0000-0000-00005b6c6b9d")
+		(property "Sheetname" "CPU"
+			(at 142.24 52.2601 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "C13cpu.kicad_sch"
+			(at 142.24 73.2692 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "C13"
+				(path "/e60147c1-60cd-4ee5-8632-0ea3e5535221"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 142.24 82.55)
+		(size 44.45 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "00000000-0000-0000-0000-00005b6d3404")
+		(property "Sheetname" "Railcom"
+			(at 142.24 81.4701 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "C13rcm.kicad_sch"
+			(at 142.24 102.4792 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "C13"
+				(path "/e60147c1-60cd-4ee5-8632-0ea3e5535221"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 80.01 82.55)
+		(size 43.18 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "00000000-0000-0000-0000-00005b6e0562")
+		(property "Sheetname" "Connector"
+			(at 80.01 81.4701 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "C13con.kicad_sch"
+			(at 80.01 102.4792 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "C13"
+				(path "/e60147c1-60cd-4ee5-8632-0ea3e5535221"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 200.66 82.55)
+		(size 50.8 19.05)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "00000000-0000-0000-0000-00005ca7768a")
+		(property "Sheetname" "Power"
+			(at 200.66 81.4701 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "C13pwr.kicad_sch"
+			(at 200.66 102.4792 0)
+			(effects
+				(font
+					(size 2.0066 2.0066)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "C13"
+				(path "/e60147c1-60cd-4ee5-8632-0ea3e5535221"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

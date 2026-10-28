@@ -1,0 +1,36 @@
+{
+  "design": "holdup_mlcc",
+  "policy": {"margins": "stated"},
+  "kicad_version": "10",
+  "nets": {
+    "VIN": {"role": "power", "voltage": "5V", "tolerance": "5%"},
+    "GND": {"role": "ground"}
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "C1": {"lib_id": "Device:C", "value": "22uF", "footprint": "Capacitor_SMD:C_0805_2012Metric",
+           "params": {"mpn": "GRM21BR61A226ME44", "tolerance": "20%", "dielectric": "X5R", "v_rating": "10V"}},
+    "C2": {"lib_id": "Device:C", "value": "22uF", "footprint": "Capacitor_SMD:C_0805_2012Metric",
+           "params": {"mpn": "GRM21BR61A226ME44", "tolerance": "20%", "dielectric": "X5R", "v_rating": "10V"}},
+    "C3": {"lib_id": "Device:C", "value": "22uF", "footprint": "Capacitor_SMD:C_0805_2012Metric",
+           "params": {"mpn": "GRM21BR61A226ME44", "tolerance": "20%", "dielectric": "X5R", "v_rating": "10V"}},
+    "C4": {"lib_id": "Device:C", "value": "22uF", "footprint": "Capacitor_SMD:C_0805_2012Metric",
+           "params": {"mpn": "GRM21BR61A226ME44", "tolerance": "20%", "dielectric": "X5R", "v_rating": "10V"}}
+  },
+  "connections": {
+    "VIN": ["J1.Pin_1", "C1.1", "C2.1", "C3.1", "C4.1", "J2.Pin_1"],
+    "GND": ["J1.Pin_2", "C1.2", "C2.2", "C3.2", "C4.2", "J2.Pin_2"]
+  },
+  "loads": [{"net": "VIN", "current": "50mA", "note": "the logic that must ride through a brown-out"}],
+  "requirements": [
+    {"type": "min_holdup_time", "net": "VIN", "floor": "4V", "time": "300us"}
+  ],
+  "blocks": {"input": ["J1"], "reservoir": ["C1", "C2", "C3", "C4"], "output": ["J2"]}
+}

@@ -1,0 +1,144 @@
+{
+  "design": "ldo_adjustable",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "VIN_12V": {
+      "role": "power",
+      "voltage": "12V",
+      "tolerance": "5%"
+    },
+    "+5V": {
+      "role": "power",
+      "voltage": "5V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "ADJ": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Regulator_Linear:LM317_SOT-223",
+      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+      "params": {
+        "regulator": "linear",
+        "v_ref": "1.25V",
+        "v_ref_tolerance": "4%",
+        "i_adj": "100uA",
+        "v_dropout": "3V",
+        "i_out_max": "1.5A",
+        "theta_ja": "66.8degC/W"
+      },
+      "source": "TI LM317 datasheet SLVS044Z (April 2025): thermal information p.7 (legacy chip, SOT-223), electrical characteristics p.8, equation 2 p.16",
+      "limits": {
+        "i_adj": "max",
+        "v_dropout": "max",
+        "i_out_max": "min"
+      }
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {
+        "v_rating": "25V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric"
+    },
+    "C2": {
+      "lib_id": "Device:C",
+      "value": "1uF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "240",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "715",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "VIN_12V": [
+      "J1.Pin_1",
+      "U1.VI",
+      "C1.1"
+    ],
+    "+5V": [
+      "U1.VO",
+      "C2.1",
+      "R1.1"
+    ],
+    "ADJ": [
+      "U1.ADJ",
+      "R1.2",
+      "R2.1"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "C1.2",
+      "C2.2",
+      "R2.2"
+    ]
+  },
+  "loads": [
+    {
+      "net": "+5V",
+      "current": "100mA",
+      "note": "downstream logic"
+    }
+  ],
+  "requirements": [
+    {
+      "type": "rail_voltage",
+      "net": "+5V",
+      "nominal": "5V",
+      "tolerance": "5%"
+    },
+    {
+      "type": "max_junction_temp",
+      "component": "U1",
+      "ambient": "40degC",
+      "limit": "125degC"
+    }
+  ],
+  "blocks": {
+    "power_in": [
+      "J1",
+      "C1"
+    ],
+    "regulator": [
+      "U1",
+      "R1",
+      "R2",
+      "C2"
+    ]
+  },
+  "placement": {
+    "order": [
+      "power_in",
+      "regulator"
+    ]
+  }
+}

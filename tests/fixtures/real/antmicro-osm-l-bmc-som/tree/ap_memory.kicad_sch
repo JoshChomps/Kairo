@@ -1,0 +1,13 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "9d2cc067-f1c8-4055-8dd8-cab44824b087")
+	(paper "A3")
+	(title_block
+		(title "BMC Reference OSM ")
+		(date "2025-08-14")
+		(rev "1.0.0")
+	)
+	(lib_symbols)
+)

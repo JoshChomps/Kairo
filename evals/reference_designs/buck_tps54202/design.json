@@ -1,0 +1,210 @@
+{
+  "design": "buck_tps54202",
+  "policy": {"margins": "stated"},
+  "kicad_version": "10",
+  "nets": {
+    "VIN_12V": {
+      "role": "power",
+      "voltage": "12V",
+      "tolerance": "5%"
+    },
+    "+5V": {
+      "role": "power",
+      "voltage": "5V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "SW": {
+      "role": "signal"
+    },
+    "BOOT": {
+      "role": "signal"
+    },
+    "FB": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Regulator_Switching:TPS54202DDC",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "params": {
+        "regulator": "switching",
+        "mpn": "TPS54202DDC",
+        "v_ref": "0.596V",
+        "v_ref_tolerance": "2.52%",
+        "f_sw": "390kHz",
+        "i_limit": "2.5A",
+        "i_out_max": "2A",
+        "theta_ja": "118.6degC/W",
+        "t_j_max": "125degC"
+      },
+      "source": "TI TPS54202 datasheet SLVSD26C (February 2026): thermal information p.4; electrical characteristics p.5 (limits over -40 to 125 degC: feedback voltage 0.581 V to 0.611 V, switching frequency at least 390 kHz, high-side current limit at least 2.5 A); output voltage equation 3, p.10",
+      "limits": {
+        "f_sw": "min",
+        "i_limit": "min"
+      }
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "10uF",
+      "params": {
+        "v_rating": "25V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_1206_3216Metric"
+    },
+    "C2": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric"
+    },
+    "L1": {
+      "lib_id": "Device:L",
+      "value": "15uH",
+      "params": {
+        "tolerance": "20%",
+        "i_sat": "3.5A"
+      },
+      "footprint": "Inductor_SMD:L_Bourns_SRN6045TA"
+    },
+    "C3": {
+      "lib_id": "Device:C_Polarized",
+      "value": "47uF",
+      "params": {
+        "v_rating": "10V",
+        "tolerance": "20%",
+        "dielectric": "polymer",
+        "esr_max": "40mohm"
+      },
+      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "100k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "13.3k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "VIN_12V": [
+      "J1.Pin_1",
+      "U1.VIN",
+      "C1.1"
+    ],
+    "SW": [
+      "U1.SW",
+      "L1.1",
+      "C2.2"
+    ],
+    "BOOT": [
+      "U1.BOOT",
+      "C2.1"
+    ],
+    "+5V": [
+      "L1.2",
+      "C3.1",
+      "R1.1",
+      "J2.Pin_1"
+    ],
+    "FB": [
+      "R1.2",
+      "R2.1",
+      "U1.FB"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "J2.Pin_2",
+      "U1.GND",
+      "C1.2",
+      "C3.2",
+      "R2.2"
+    ]
+  },
+  "no_connect": [
+    "U1.EN"
+  ],
+  "loads": [
+    {
+      "net": "+5V",
+      "current": "1.5A",
+      "note": "the load on the output header"
+    }
+  ],
+  "requirements": [
+    {
+      "type": "rail_voltage",
+      "net": "+5V",
+      "nominal": "5V",
+      "tolerance": "7%"
+    },
+    {
+      "type": "max_inductor_current",
+      "component": "L1"
+    },
+    {
+      "type": "max_ripple",
+      "net": "+5V",
+      "value": "50mV"
+    },
+    {
+      "type": "min_capacitance",
+      "between": [
+        "+5V",
+        "GND"
+      ],
+      "value": "24uF",
+      "basis": "effective"
+    }
+  ],
+  "blocks": {
+    "power_in": [
+      "J1",
+      "C1"
+    ],
+    "regulator": [
+      "U1",
+      "C2",
+      "L1"
+    ],
+    "output": [
+      "C3",
+      "R1",
+      "R2",
+      "J2"
+    ]
+  },
+  "placement": {
+    "flow": "left_to_right",
+    "order": [
+      "power_in",
+      "regulator",
+      "output"
+    ]
+  }
+}

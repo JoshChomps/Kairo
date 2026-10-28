@@ -1,0 +1,57 @@
+{
+ "engines": {
+  "ngspice": "47",
+  "xyce": "7.10.0"
+ },
+ "scenarios": {
+  "regulator at rest": {
+   "status": "checked",
+   "failed_runs": [],
+   "practice": []
+  },
+  "regulator, supply rising in 1 ms": {
+   "status": "unverified",
+   "failed_runs": [],
+   "practice": [
+    "note: A_HOT_PLUG_NOT_ASSESSED on VIN_5V"
+   ]
+  },
+  "regulator, plugged in live through 1 uH and 50 mohm": {
+   "status": "unverified",
+   "failed_runs": [
+    "ngspice (accurate, tightened): doAnalyses: TRAN:  Timestep too small; time = 1.00128e-09, timestep = 5.93536e-20: trouble with node \"c1_1\"; run simulation(s) aborted",
+    "xyce (accurate): Verify Devices                           1        0.000 ( 0.00%)        0.000 (<0.01%); Instantiate                              1        0.000 ( 0.00%)        0.000 ( 0.03%); Late Initialization                        1        0.000 ( 0.00%)        0.001 ( 0.12%); Global Indices                           1        0.000 ( 0.00%)        0.000 ( 0.02%); Setup Matrix Structure                     1        0.000 ( 0.00%)        0.000 ( 0.02%)",
+    "xyce (accurate, tightened): Verify Devices                           1        0.000 ( 0.00%)        0.000 (<0.01%); Instantiate                              1        0.000 ( 0.00%)        0.000 ( 0.06%); Late Initialization                        1        0.000 ( 0.00%)        0.001 ( 0.32%); Global Indices                           1        0.000 ( 0.00%)        0.000 ( 0.03%); Setup Matrix Structure                     1        0.000 ( 0.00%)        0.000 ( 0.04%)"
+   ],
+   "practice": [
+    "warning: A_HOT_PLUG_RINGING on VIN_5V",
+    "note: A_INRUSH on VIN_5V"
+   ]
+  },
+  "regulator, plugged in live with 1 ohm added in series": {
+   "status": "unverified",
+   "failed_runs": [
+    "ngspice (accurate, tightened): doAnalyses: TRAN:  Timestep too small; time = 1.00004e-09, timestep = 1.25e-19: trouble with node \"n_vin_5f_5v\"; run simulation(s) aborted",
+    "xyce (accurate, tightened): Verify Devices                           1        0.000 ( 0.00%)        0.000 ( 0.02%); Instantiate                              1        0.000 ( 0.00%)        0.000 ( 0.60%); Late Initialization                        1        0.000 ( 0.00%)        0.001 ( 3.02%); Global Indices                           1        0.000 ( 0.00%)        0.000 ( 0.31%); Setup Matrix Structure                     1        0.000 ( 0.00%)        0.000 ( 0.39%)"
+   ],
+   "practice": [
+    "note: A_INRUSH on VIN_5V"
+   ]
+  },
+  "filter, 3.3 V step": {
+   "status": "checked",
+   "failed_runs": [],
+   "practice": []
+  },
+  "filter, frequency sweep": {
+   "status": "checked",
+   "failed_runs": [],
+   "practice": []
+  },
+  "indicator at rest": {
+   "status": "checked",
+   "failed_runs": [],
+   "practice": []
+  }
+ }
+}

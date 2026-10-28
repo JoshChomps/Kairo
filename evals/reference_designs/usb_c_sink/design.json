@@ -1,0 +1,101 @@
+{
+  "design": "usb_c_sink",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "VBUS": {
+      "role": "power",
+      "voltage": "5V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "CC1": {
+      "role": "signal"
+    },
+    "CC2": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:USB_C_Receptacle_USB2.0_16P",
+      "footprint": "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "5.1k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "5.1k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "10uF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X5R"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    }
+  },
+  "connections": {
+    "VBUS": [
+      "J1.VBUS*",
+      "C1.1",
+      "J2.Pin_1"
+    ],
+    "GND": [
+      "J1.GND*",
+      "J1.SHIELD",
+      "R1.2",
+      "R2.2",
+      "C1.2",
+      "J2.Pin_2"
+    ],
+    "CC1": [
+      "J1.CC1",
+      "R1.1"
+    ],
+    "CC2": [
+      "J1.CC2",
+      "R2.1"
+    ]
+  },
+  "no_connect": [
+    "J1.D+*",
+    "J1.D-*",
+    "J1.SBU1",
+    "J1.SBU2"
+  ],
+  "blocks": {
+    "input": [
+      "J1",
+      "R1",
+      "R2"
+    ],
+    "output": [
+      "C1",
+      "J2"
+    ]
+  },
+  "placement": {
+    "order": [
+      "input",
+      "output"
+    ]
+  }
+}

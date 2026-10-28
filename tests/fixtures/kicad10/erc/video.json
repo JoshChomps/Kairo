@@ -1,0 +1,118 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-06T22:42:10",
+    "ignored_checks": [
+        {
+            "description": "Unconnected wire endpoint",
+            "key": "unconnected_wire_endpoint"
+        },
+        {
+            "description": "More than one name given to this bus or net",
+            "key": "multiple_net_names"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90",
+            "violations": [
+                {
+                    "description": "Footprint 'DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset15.98mm' not found in library 'Connector_Dsub'",
+                    "items": [
+                        {
+                            "description": "Symbol J4 [DB9]",
+                            "pos": {
+                                "x": 3.8989,
+                                "y": 1.0287
+                            },
+                            "uuid": "077f875b-10a4-4fcd-913c-bf4d1dc4171b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Footprint 'CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder' not found in library 'Capacitor_Tantalum_SMD'",
+                    "items": [
+                        {
+                            "description": "Symbol C56 [CP]",
+                            "pos": {
+                                "x": 0.3175,
+                                "y": 2.6543
+                            },
+                            "uuid": "1459b4e3-6b83-4df4-a8ae-9eceb13fab5e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                },
+                {
+                    "description": "Footprint 'CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder' not found in library 'Capacitor_Tantalum_SMD'",
+                    "items": [
+                        {
+                            "description": "Symbol C57 [CP]",
+                            "pos": {
+                                "x": 0.5207,
+                                "y": 2.6543
+                            },
+                            "uuid": "454e830f-c0be-465f-80ba-3ee5328a8cb7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "footprint_link_issues"
+                }
+            ]
+        },
+        {
+            "path": "/buspci.sch/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf03687",
+            "violations": []
+        },
+        {
+            "path": "/graphic/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf03683",
+            "violations": []
+        },
+        {
+            "path": "/ESVIDEO-RVB/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf03689",
+            "violations": []
+        },
+        {
+            "path": "/pal-ntsc.sch/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf03681",
+            "violations": []
+        },
+        {
+            "path": "/RAMS/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf03685",
+            "violations": []
+        },
+        {
+            "path": "/muxdata/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf0367d",
+            "violations": []
+        },
+        {
+            "path": "/modul/",
+            "uuid_path": "/f54f2c44-70ae-46db-88a1-bf696c289e90/00000000-0000-0000-0000-00004bf0367f",
+            "violations": []
+        }
+    ],
+    "source": "video.kicad_sch"
+}

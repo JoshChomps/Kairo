@@ -1,0 +1,114 @@
+{
+ "status": "checked",
+ "unverified_because": [],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "metrics": [
+  {
+   "metric": "gain_at_start",
+   "where": "OUT",
+   "value": -0.000171449,
+   "unit": "dB",
+   "status": "checked"
+  },
+  {
+   "metric": "gain_at_stop",
+   "where": "OUT",
+   "value": -55.9636,
+   "unit": "dB",
+   "status": "checked"
+  },
+  {
+   "metric": "cutoff",
+   "where": "OUT",
+   "value": 1591.47,
+   "unit": "Hz",
+   "status": "checked"
+  }
+ ],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-07 F; C0G does not lose capacitance with DC bias; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "J2",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "source IN",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a 1 V sweep input, so every result is a gain, with no impedance"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [],
+ "practice": [],
+ "request": {
+  "analysis": {
+   "kind": "ac",
+   "f_start": "10Hz",
+   "f_stop": "1MHz"
+  },
+  "stimuli": [
+   {
+    "net": "IN",
+    "kind": "ac"
+   }
+  ]
+ }
+}

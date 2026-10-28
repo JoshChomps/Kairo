@@ -1,0 +1,117 @@
+{
+  "design": "opamp_gain_of_two",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "+3V3": {
+      "role": "power",
+      "voltage": "3.3V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "IN": {
+      "role": "signal"
+    },
+    "OUT": {
+      "role": "signal"
+    },
+    "FB": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J3": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Amplifier_Operational:MCP6001-OT",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "10k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "10k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "+3V3": [
+      "J3.Pin_1",
+      "U1.V+",
+      "C1.1"
+    ],
+    "GND": [
+      "J3.Pin_2",
+      "J1.Pin_2",
+      "J2.Pin_2",
+      "U1.V-",
+      "R2.2",
+      "C1.2"
+    ],
+    "IN": [
+      "J1.Pin_1",
+      "U1.+"
+    ],
+    "OUT": [
+      "U1.1",
+      "R1.1",
+      "J2.Pin_1"
+    ],
+    "FB": [
+      "U1.-",
+      "R1.2",
+      "R2.1"
+    ]
+  },
+  "blocks": {
+    "input": [
+      "J3",
+      "J1"
+    ],
+    "amplifier": [
+      "U1",
+      "R1",
+      "R2",
+      "C1"
+    ],
+    "output": [
+      "J2"
+    ]
+  },
+  "placement": {
+    "order": [
+      "input",
+      "amplifier",
+      "output"
+    ]
+  }
+}

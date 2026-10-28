@@ -1,0 +1,396 @@
+{
+ "status": "unverified",
+ "unverified_because": [
+  "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+  "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+  "the tightened run gave no such number, so stability is not checked"
+ ],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "limits_basis": "stated values",
+ "on_default_margins": [],
+ "metrics": [
+  {
+   "metric": "start",
+   "where": "VIN_5V",
+   "value": -1.11249e-06,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "VIN_5V",
+   "value": 4.68367,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "VIN_5V",
+   "value": 4.68367,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "VIN_5V",
+   "value": -2.08342e-06,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "VIN_5V",
+   "value": 1.27699e-10,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "VIN_5V",
+   "value": 6.13081e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "VIN_5V",
+   "value": 0.00012285,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "+3V3",
+   "value": 1.16547e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "+3V3",
+   "value": 3.2997,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "+3V3",
+   "value": 3.2997,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "+3V3",
+   "value": 1.16547e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "+3V3",
+   "value": 6.46009e-13,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "+3V3",
+   "value": 5.99145e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "+3V3",
+   "value": 0.000106457,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "LED_A",
+   "value": 1.16577e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "LED_A",
+   "value": 1.16577e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "LED_A",
+   "value": 2.21445e-14,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "LED_A",
+   "value": 2.09283e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "LED_A",
+   "value": 3.07738e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  },
+  {
+   "metric": "peak_current",
+   "where": "source VIN_5V",
+   "value": 4.00218,
+   "unit": "A",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the tightened run gave no such number, so stability is not checked"
+   ]
+  }
+ ],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "U1",
+   "fidelity": "behavioural",
+   "source": "kairo:ldo_macro",
+   "note": "holds 3.3 V, or the input less its stated dropout of 1.3 V when that is lower; the input draws the output current, its quiescent current is not given, so none is drawn. Current limit, start-up, loop response and supply rejection are not represented"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "C2",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 2.2e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "D1",
+   "fidelity": "behavioural",
+   "source": "kairo:fixed_drop",
+   "note": "conducts above its stated forward voltage of 2 V and drops that at any current; a real diode's drop rises with current, so currents near turn-on are not represented"
+  },
+  {
+   "ref": "source VIN_5V",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a step from 0 V to 5 V in 1e-06 s behind 1.05 ohm and 1e-06 H"
+  },
+  {
+   "ref": "load 1 on +3V3",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "a 11 ohm resistor (3.3 V / 0.3 A). The design gives the load's current, not how it behaves below nominal voltage"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [
+  "ngspice (accurate, tightened): doAnalyses: TRAN:  Timestep too small; time = 1.00004e-09, timestep = 1.25e-19: trouble with node \"n_vin_5f_5v\"; run simulation(s) aborted",
+  "xyce (accurate, tightened): Time step too small near step number: 640  Exiting transient loop."
+ ],
+ "practice": [
+  {
+   "code": "A_INRUSH",
+   "severity": "note",
+   "where": "VIN_5V",
+   "message": "The source on VIN_5V supplies a peak of 4.002 A while the capacitors charge, against 0.3013 A once settled. Charging current is C * dV/dt, so a slower edge or soft-start lowers it. Check the peak against what the supply, connector and any fuse allow",
+   "source": "TI SLYT332, Taming linear-regulator inrush currents",
+   "from_checked_numbers": false
+  }
+ ],
+ "request": {
+  "analysis": {
+   "kind": "tran",
+   "duration": "400us"
+  },
+  "stimuli": [
+   {
+    "net": "VIN_5V",
+    "kind": "step",
+    "value": "5V",
+    "rise": "1us",
+    "resistance": "1.05ohm",
+    "inductance": "1uH"
+   }
+  ]
+ }
+}

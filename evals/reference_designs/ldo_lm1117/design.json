@@ -1,0 +1,171 @@
+{
+  "design": "ldo_lm1117",
+  "policy": {"margins": "stated"},
+  "kicad_version": "10",
+  "nets": {
+    "VIN_5V": {
+      "role": "power",
+      "voltage": "5V",
+      "tolerance": "5%"
+    },
+    "+3V3": {
+      "role": "power",
+      "voltage": "3.3V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "LED_A": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Regulator_Linear:LM1117MP-3.3",
+      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+      "params": {
+        "regulator": "linear",
+        "mpn": "LM1117MP-3.3",
+        "v_out": "3.3V",
+        "v_out_tolerance": "1.97%",
+        "v_dropout": "1.25V",
+        "i_out_max": "800mA",
+        "i_q": "10mA",
+        "theta_ja": "61.6degC/W",
+        "t_j_max": "125degC",
+        "c_out_min": "10uF",
+        "c_out_esr_min": "0.3ohm",
+        "c_out_esr_max": "22ohm"
+      },
+      "source": "TI LM1117 datasheet SNOS412Q (January 2023): thermal information p.4, electrical characteristics p.5-6 (limits over 0 to 125 degC), output capacitor p.15",
+      "limits": {
+        "i_q": "max",
+        "v_dropout": "max",
+        "i_out_max": "min"
+      }
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "10uF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X5R"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric"
+    },
+    "C2": {
+      "lib_id": "Device:C_Polarized",
+      "value": "22uF",
+      "params": {
+        "v_rating": "10V",
+        "tolerance": "10%",
+        "dielectric": "tantalum",
+        "esr": "1ohm",
+        "esr_min": "0.5ohm",
+        "esr_max": "2ohm"
+      },
+      "footprint": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "1k",
+      "params": {
+        "p_rating": "0.125W",
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "D1": {
+      "lib_id": "Device:LED",
+      "params": {
+        "v_f": "2.0V"
+      },
+      "footprint": "LED_SMD:LED_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "VIN_5V": [
+      "J1.Pin_1",
+      "U1.VI",
+      "C1.1"
+    ],
+    "+3V3": [
+      "U1.VO",
+      "C2.1",
+      "R1.1"
+    ],
+    "LED_A": [
+      "R1.2",
+      "D1.A"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "U1.GND",
+      "C1.2",
+      "C2.2",
+      "D1.K"
+    ]
+  },
+  "loads": [
+    {
+      "net": "+3V3",
+      "current": "300mA",
+      "note": "downstream MCU budget"
+    }
+  ],
+  "requirements": [
+    {
+      "type": "min_capacitance",
+      "between": [
+        "+3V3",
+        "GND"
+      ],
+      "value": "10uF",
+      "basis": "effective"
+    },
+    {
+      "type": "rail_voltage",
+      "net": "+3V3",
+      "nominal": "3.3V",
+      "tolerance": "3%"
+    },
+    {
+      "type": "max_junction_temp",
+      "component": "U1",
+      "ambient": "40degC",
+      "limit": "125degC"
+    },
+    {
+      "type": "max_component_power",
+      "component": "R1",
+      "derating": "50%"
+    }
+  ],
+  "blocks": {
+    "power_in": [
+      "J1",
+      "C1"
+    ],
+    "regulator": [
+      "U1",
+      "C2"
+    ],
+    "indicator": [
+      "R1",
+      "D1"
+    ]
+  },
+  "placement": {
+    "flow": "left_to_right",
+    "order": [
+      "power_in",
+      "regulator",
+      "indicator"
+    ]
+  }
+}

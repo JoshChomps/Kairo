@@ -1,0 +1,22 @@
+{
+ "mpn": "LM1117MP-3.3",
+ "file": "LM1117_N_3P3_TRANS.LIB",
+ "subckt": "LM1117_N_3P3_TRANS",
+ "nodes": [
+  "VI",
+  "VO",
+  "GND",
+  "GND"
+ ],
+ "dialect": "pspice",
+ "engines": [
+  "ngspice",
+  "xyce"
+ ],
+ "fidelity": "vendor-converted",
+ "conversion_checked": false,
+ "manufacturer": "Texas Instruments",
+ "source": "https://www.ti.com/lit/zip/SNOM488 (LM1117 3P3 Unencrypted PSpice Transient Model)",
+ "version": "Final 1.1, 17 March 2015, for datasheet SNOS412M",
+ "covers": "a transient model; the file states no scope. Its parameters give dropout against load current, a 1.2 A current limit, a 1.5 V under-voltage lockout, a start-up time, a supply-rejection pole and zero, and 1.5 mohm of output resistance"
+}

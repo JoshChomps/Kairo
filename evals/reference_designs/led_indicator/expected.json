@@ -1,0 +1,21 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "+5V": [
+      "J1.1",
+      "R1.1"
+    ],
+    "/LED_A": [
+      "R1.2",
+      "D1.2"
+    ],
+    "GND": [
+      "J1.2",
+      "D1.1"
+    ]
+  },
+  "unverified": [
+    "max_component_power"
+  ],
+  "why_unverified": "the 5 V rail has no stated tolerance"
+}

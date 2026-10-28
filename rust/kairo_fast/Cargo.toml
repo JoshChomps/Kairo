@@ -1,0 +1,22 @@
+[package]
+name = "kairo_fast"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "Apache-2.0"
+description = "The inner loops of Kairo's router, compiled."
+
+[lib]
+name = "kairo_fast"
+crate-type = ["cdylib"]
+
+[dependencies]
+# abi3: one build serves every Python from 3.12. generate-import-lib lets
+# the windows-gnu toolchain link against an MSVC-built Python.
+pyo3 = { version = "0.30", features = ["abi3-py312", "generate-import-lib"] }
+rustc-hash = "2.1"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3

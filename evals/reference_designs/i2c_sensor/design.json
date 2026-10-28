@@ -1,0 +1,47 @@
+{
+  "design": "i2c_sensor",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "+3V3": {"role": "power", "voltage": "3.3V"},
+    "GND": {"role": "ground"},
+    "SDA": {"role": "signal"},
+    "SCL": {"role": "signal"}
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x04_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Sensor_Temperature:LM75B",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "4.7k",
+      "params": {"tolerance": "1%"},
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "4.7k",
+      "params": {"tolerance": "1%"},
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {"v_rating": "16V", "tolerance": "10%", "dielectric": "X7R"},
+      "footprint": "Capacitor_SMD:C_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "+3V3": ["J1.Pin_1", "U1.+Vs", "R1.1", "R2.1", "C1.1"],
+    "GND": ["J1.Pin_2", "U1.GND", "U1.A0", "U1.A1", "U1.A2", "C1.2"],
+    "SDA": ["J1.Pin_3", "U1.SDA", "R1.2"],
+    "SCL": ["J1.Pin_4", "U1.SCL", "R2.2"]
+  },
+  "no_connect": ["U1.O.S."],
+  "blocks": {"bus": ["J1", "R1", "R2"], "sensor": ["U1", "C1"]},
+  "placement": {"order": ["bus", "sensor"]}
+}

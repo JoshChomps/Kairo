@@ -1,0 +1,234 @@
+{
+ "status": "checked",
+ "unverified_because": [],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "limits_basis": "stated values",
+ "on_default_margins": [],
+ "metrics": [
+  {
+   "metric": "voltage",
+   "where": "VIN_5V",
+   "value": 5.0,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "voltage",
+   "where": "+3V3",
+   "value": 3.3,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "voltage",
+   "where": "LED_A",
+   "value": 2.00544,
+   "unit": "V",
+   "status": "checked"
+  },
+  {
+   "metric": "supplied_current",
+   "where": "VIN_5V",
+   "value": 0.301295,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "supplied_current",
+   "where": "+3V3",
+   "value": 0.301295,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "J1",
+   "value": 0.0,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "power",
+   "where": "J1",
+   "value": 0.0,
+   "unit": "W",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "U1",
+   "value": 0.301295,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "C1",
+   "value": 0.0,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "power",
+   "where": "C1",
+   "value": 0.0,
+   "unit": "W",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "C2",
+   "value": 0.0,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "power",
+   "where": "C2",
+   "value": 0.0,
+   "unit": "W",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "R1",
+   "value": 0.00129456,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "power",
+   "where": "R1",
+   "value": 0.00167587,
+   "unit": "W",
+   "status": "checked"
+  },
+  {
+   "metric": "current",
+   "where": "D1",
+   "value": 0.00129456,
+   "unit": "A",
+   "status": "checked"
+  },
+  {
+   "metric": "power",
+   "where": "D1",
+   "value": 0.00259616,
+   "unit": "W",
+   "status": "checked"
+  }
+ ],
+ "compared": [
+  {
+   "what": "current supplied to VIN_5V",
+   "calculated": 0.3013,
+   "simulated": 0.301295,
+   "unit": "A",
+   "agree": true,
+   "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+  },
+  {
+   "what": "current supplied to +3V3",
+   "calculated": 0.3013,
+   "simulated": 0.301295,
+   "unit": "A",
+   "agree": true,
+   "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+  }
+ ],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "U1",
+   "fidelity": "behavioural",
+   "source": "kairo:ldo_macro",
+   "note": "holds 3.3 V, or the input less its stated dropout of 1.3 V when that is lower; the input draws the output current, its quiescent current is not given, so none is drawn. Current limit, start-up, loop response and supply rejection are not represented"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "C2",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 2.2e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "D1",
+   "fidelity": "behavioural",
+   "source": "kairo:fixed_drop",
+   "note": "conducts above its stated forward voltage of 2 V and drops that at any current; a real diode's drop rises with current, so currents near turn-on are not represented"
+  },
+  {
+   "ref": "source VIN_5V",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 5 V source: the net's nominal voltage, with no resistance or inductance"
+  },
+  {
+   "ref": "load 1 on +3V3",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "a constant 0.3 A, as the design states"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [],
+ "practice": [],
+ "request": {
+  "analysis": {
+   "kind": "op"
+  }
+ }
+}

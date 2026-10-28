@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      # setup-uv publishes no moving major tag, so a full version is named.
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: ${{ matrix.python }}
+      # Builds Kairo with its compiled loops (rust/kairo_fast) by maturin.
+      - run: uv sync --locked --all-groups
+      - run: uv run ruff check
+      - run: uv run ruff format --check
+      - run: uv run pyright
+      - run: cargo fmt --check
+        working-directory: rust/kairo_fast
+      - run: cargo clippy --release -- -D warnings
+        working-directory: rust/kairo_fast
+      # KiCad and the simulators are not installed on the runners yet, so
+      # the tests that need them are left out here.
+      - run: uv run pytest -m "not kicad and not spice"
+      - run: uv run sphinx-build -W docs docs/_build/html
+      - run: uv run kairo --help
+
+  # The simulator tests, on the ngspice that Ubuntu packages. It is not
+  # the version the accuracy set's results were recorded on (47), so a
+  # failure here can be the version; the job says which it ran.
+  simulators:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: "3.13"
+      - run: sudo apt-get update && sudo apt-get install -y ngspice
+      - run: ngspice --version
+      - run: uv sync --locked --all-groups
+      - run: uv run pytest -m "spice and not kicad"

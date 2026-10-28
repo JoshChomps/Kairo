@@ -1,0 +1,75 @@
+{
+  "design": "led_indicator",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "+5V": {
+      "role": "power",
+      "voltage": "5V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "LED_A": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "330",
+      "params": {
+        "tolerance": "1%",
+        "p_rating": "0.1W"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "D1": {
+      "lib_id": "Device:LED",
+      "params": {
+        "v_f": "2.0V",
+        "v_f_tolerance": "10%"
+      },
+      "footprint": "LED_SMD:LED_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "+5V": [
+      "J1.Pin_1",
+      "R1.1"
+    ],
+    "LED_A": [
+      "R1.2",
+      "D1.A"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "D1.K"
+    ]
+  },
+  "requirements": [
+    {
+      "type": "max_component_power",
+      "component": "R1",
+      "derating": "50%"
+    }
+  ],
+  "blocks": {
+    "input": [
+      "J1"
+    ],
+    "indicator": [
+      "R1",
+      "D1"
+    ]
+  },
+  "placement": {
+    "order": [
+      "input",
+      "indicator"
+    ]
+  }
+}

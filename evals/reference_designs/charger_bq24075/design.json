@@ -1,0 +1,133 @@
+{
+  "design": "charger_bq24075",
+  "policy": {"margins": "stated"},
+  "kicad_version": "10",
+  "nets": {
+    "VBUS": {"role": "power", "voltage": "5V", "tolerance": "5%"},
+    "SYS": {"role": "power", "voltage": "4.1V", "tolerance": "30%"},
+    "BAT": {"role": "power", "voltage": "3.6V", "tolerance": "17%"},
+    "GND": {"role": "ground"},
+    "ISET": {"role": "signal"},
+    "ILIM": {"role": "signal"},
+    "TS": {"role": "signal"}
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "J3": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "Battery_Management:BQ24075RGT",
+      "footprint": "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
+      "params": {
+        "mpn": "BQ24075RGT",
+        "k_charge": "886V",
+        "k_charge_tolerance": "10.046%",
+        "k_input": "1610V",
+        "k_input_tolerance": "6.833%",
+        "theta_ja": "44.5degC/W"
+      },
+      "source": "TI BQ2407x datasheet SLUS810N (revised October 2021): fast charge current factor KISET 797 to 975 A*ohm, p.13; maximum input current factor KILIM 1500 to 1720 A*ohm for ILIM of 500 mA to 1.5 A, p.12; ICHG = KISET / RISET, equation 2, p.25; IIN-MAX = KILIM / RILIM, equation 1, p.21; pin functions and EN1/EN2 settings, pp.8-9; RGT thermal information, p.11"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "1uF",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "params": {"tolerance": "10%", "dielectric": "X7R", "v_rating": "16V"}
+    },
+    "C2": {
+      "lib_id": "Device:C",
+      "value": "4.7uF",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "params": {"tolerance": "10%", "dielectric": "X7R", "v_rating": "16V"}
+    },
+    "C3": {
+      "lib_id": "Device:C",
+      "value": "4.7uF",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "params": {"tolerance": "10%", "dielectric": "X7R", "v_rating": "16V"}
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "1.78k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "params": {"tolerance": "1%"}
+    },
+    "R2": {
+      "lib_id": "Device:R",
+      "value": "1.62k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "params": {"tolerance": "1%"}
+    },
+    "R3": {
+      "lib_id": "Device:R",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "params": {"tolerance": "1%"}
+    }
+  },
+  "connections": {
+    "VBUS": [
+      "J1.Pin_1",
+      "U1.IN",
+      "U1.EN2",
+      "C1.1"
+    ],
+    "SYS": [
+      "U1.OUT*",
+      "C2.1",
+      "J3.Pin_1"
+    ],
+    "BAT": [
+      "U1.BAT*",
+      "C3.1",
+      "J2.Pin_1"
+    ],
+    "ISET": [
+      "U1.ISET",
+      "R1.1"
+    ],
+    "ILIM": [
+      "U1.ILIM",
+      "R2.1"
+    ],
+    "TS": [
+      "U1.TS",
+      "R3.1"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "J2.Pin_2",
+      "J3.Pin_2",
+      "U1.~{CE}",
+      "U1.EN1",
+      "U1.VSS*",
+      "U1.SYSOFF",
+      "C1.2",
+      "C2.2",
+      "C3.2",
+      "R1.2",
+      "R2.2",
+      "R3.2"
+    ]
+  },
+  "no_connect": [
+    "U1.~{PGOOD}",
+    "U1.~{CHG}",
+    "U1.TMR"
+  ],
+  "loads": [{"net": "SYS", "current": "300mA", "note": "the system"}],
+  "requirements": [
+    {"type": "programmed_current", "component": "U1", "pin": "ISET", "factor": "k_charge", "min": "400mA", "max": "600mA"},
+    {"type": "programmed_current", "component": "U1", "pin": "ILIM", "factor": "k_input", "min": "800mA", "max": "1.2A"}
+  ],
+  "blocks": {"input": ["J1", "C1"], "charger": ["U1", "R1", "R2", "R3"], "battery": ["J2", "C3"], "system": ["J3", "C2"]}
+}

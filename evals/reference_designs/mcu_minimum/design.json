@@ -1,0 +1,84 @@
+{
+  "design": "mcu_minimum",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "+5V": {
+      "role": "power",
+      "voltage": "5V"
+    },
+    "GND": {
+      "role": "ground"
+    },
+    "RESET": {
+      "role": "signal"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "U1": {
+      "lib_id": "MCU_Microchip_ATtiny:ATtiny85-20S",
+      "footprint": "Package_SO:SOIC-8_5.3x5.3mm_P1.27mm"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "10k",
+      "params": {
+        "tolerance": "5%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {
+        "v_rating": "16V",
+        "tolerance": "10%",
+        "dielectric": "X7R"
+      },
+      "footprint": "Capacitor_SMD:C_0603_1608Metric"
+    }
+  },
+  "connections": {
+    "+5V": [
+      "J1.Pin_1",
+      "U1.VCC",
+      "R1.1",
+      "C1.1"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "U1.GND",
+      "C1.2"
+    ],
+    "RESET": [
+      "U1.~{RESET}/PB5",
+      "R1.2"
+    ]
+  },
+  "no_connect": [
+    "U1.XTAL1/PB3",
+    "U1.XTAL2/PB4",
+    "U1.AREF/PB0",
+    "U1.PB1",
+    "U1.PB2"
+  ],
+  "blocks": {
+    "power": [
+      "J1",
+      "C1"
+    ],
+    "mcu": [
+      "U1",
+      "R1"
+    ]
+  },
+  "placement": {
+    "order": [
+      "power",
+      "mcu"
+    ]
+  }
+}

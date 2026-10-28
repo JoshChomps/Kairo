@@ -1,0 +1,77 @@
+{
+  "design": "rc_lowpass",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "IN": {
+      "role": "signal"
+    },
+    "OUT": {
+      "role": "signal"
+    },
+    "GND": {
+      "role": "ground"
+    }
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "R1": {
+      "lib_id": "Device:R",
+      "value": "1k",
+      "params": {
+        "tolerance": "1%"
+      },
+      "footprint": "Resistor_SMD:R_0603_1608Metric"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "100nF",
+      "params": {
+        "tolerance": "5%",
+        "dielectric": "C0G"
+      },
+      "footprint": "Capacitor_SMD:C_0805_2012Metric"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    }
+  },
+  "connections": {
+    "IN": [
+      "J1.Pin_1",
+      "R1.1"
+    ],
+    "OUT": [
+      "R1.2",
+      "C1.1",
+      "J2.Pin_1"
+    ],
+    "GND": [
+      "J1.Pin_2",
+      "C1.2",
+      "J2.Pin_2"
+    ]
+  },
+  "blocks": {
+    "input": [
+      "J1"
+    ],
+    "filter": [
+      "R1",
+      "C1"
+    ],
+    "output": [
+      "J2"
+    ]
+  },
+  "placement": {
+    "order": [
+      "input",
+      "filter",
+      "output"
+    ]
+  }
+}

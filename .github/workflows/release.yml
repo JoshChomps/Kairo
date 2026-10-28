@@ -1,0 +1,113 @@
+name: Release
+
+# Builds Kairo's wheels for each platform, installs each one on a clean
+# runner of its own platform and runs it, and on a version tag attaches them
+# to a GitHub release. Nothing is uploaded to PyPI.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  wheels:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, target: x86_64, manylinux: "2014" }
+          - { os: ubuntu-latest, target: aarch64, manylinux: "2014" }
+          - { os: macos-latest, target: aarch64-apple-darwin }
+          - { os: macos-13, target: x86_64-apple-darwin }
+          - { os: windows-latest, target: x64 }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: PyO3/maturin-action@v1
+        with:
+          target: ${{ matrix.target }}
+          manylinux: ${{ matrix.manylinux || 'auto' }}
+          args: --release --out dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wheel-${{ matrix.os }}-${{ matrix.target }}
+          path: dist/*.whl
+
+  sdist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: PyO3/maturin-action@v1
+        with:
+          command: sdist
+          args: --out dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sdist
+          path: dist/*.tar.gz
+
+  # Each wheel installed alone, as a user would, and run: the compiled
+  # loops must import, and the command must start.
+  smoke:
+    needs: wheels
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, wheel: wheel-ubuntu-latest-x86_64 }
+          - { os: ubuntu-24.04-arm, wheel: wheel-ubuntu-latest-aarch64 }
+          - { os: macos-latest, wheel: wheel-macos-latest-aarch64-apple-darwin }
+          - { os: macos-13, wheel: wheel-macos-13-x86_64-apple-darwin }
+          - { os: windows-latest, wheel: wheel-windows-latest-x64 }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ matrix.wheel }}
+          path: wheel
+      - shell: bash
+        run: |
+          uv venv try
+          uv pip install --python try wheel/*.whl
+          bin=try/bin; [ -d try/Scripts ] && bin=try/Scripts
+          "$bin/python" -c "import kairo, kairo._fast; print(kairo.__version__, kairo._fast.__file__)"
+          "$bin/kairo" --help
+
+  # The Claude Desktop extension, carrying every platform's wheel.
+  extension:
+    needs: smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10.2.0
+        with:
+          python-version: "3.13"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: wheel-*
+          path: dist/wheels
+          merge-multiple: true
+      - run: uv run python packaging/mcpb/build.py --wheels dist/wheels --output dist/kairo.mcpb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension
+          path: dist/kairo.mcpb
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [smoke, sdist, extension]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          draft: true

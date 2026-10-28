@@ -1,0 +1,244 @@
+{
+ "engines": {
+  "ngspice": "47",
+  "xyce": "7.10.0"
+ },
+ "designs": {
+  "buck_refusal": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to VIN_12V",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "buck_tps54202": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to VIN_12V",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "i2c_sensor": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to +3V3",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for R1, R2, U1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "ldo_3v3": {
+   "status": "checked",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to VIN_5V",
+     "calculated": 0.3013,
+     "simulated": 0.301295,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    },
+    {
+     "what": "current supplied to +3V3",
+     "calculated": 0.3013,
+     "simulated": 0.301295,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    }
+   ],
+   "all_agree": true
+  },
+  "ldo_adjustable": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to VIN_12V",
+     "calculated": 0.105236,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": false,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    }
+   ],
+   "all_agree": false
+  },
+  "ldo_lm1117": {
+   "status": "unverified",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to VIN_5V",
+     "calculated": 0.3113,
+     "simulated": 0.301284,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    },
+    {
+     "what": "current supplied to +3V3",
+     "calculated": 0.3013,
+     "simulated": 0.301286,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    }
+   ],
+   "all_agree": true
+  },
+  "ldo_overloaded": {
+   "status": "checked",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to VIN_5V",
+     "calculated": 0.9013,
+     "simulated": 0.901295,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    },
+    {
+     "what": "current supplied to +3V3",
+     "calculated": 0.9013,
+     "simulated": 0.901295,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    }
+   ],
+   "all_agree": true
+  },
+  "led_indicator": {
+   "status": "checked",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to +5V",
+     "calculated": 0.00909091,
+     "simulated": 0.00907261,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    }
+   ],
+   "all_agree": true
+  },
+  "mcu_minimum": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to +5V",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for R1, U1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "opamp_gain_of_two": {
+   "status": "unverified",
+   "unmodelled": [
+    "U1"
+   ],
+   "compared": [
+    {
+     "what": "current supplied to +3V3",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for U1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "rc_lowpass": {
+   "status": "unverified",
+   "unmodelled": [],
+   "compared": [],
+   "all_agree": true
+  },
+  "rc_lowpass_refusal": {
+   "status": "unverified",
+   "unmodelled": [],
+   "compared": [],
+   "all_agree": true
+  },
+  "reverse_polarity": {
+   "status": "checked",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to VIN_RAW",
+     "calculated": 0.0,
+     "simulated": -1.32349e-23,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for D1, so the real current is higher"
+    },
+    {
+     "what": "current supplied to VIN_PROT",
+     "calculated": 0.5,
+     "simulated": 0.5,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right. Both leave out what is not given for D1, so the real current is higher"
+    }
+   ],
+   "all_agree": true
+  },
+  "usb_c_sink": {
+   "status": "checked",
+   "unmodelled": [],
+   "compared": [
+    {
+     "what": "current supplied to VBUS",
+     "calculated": 0.0,
+     "simulated": -0.0,
+     "unit": "A",
+     "agree": true,
+     "note": "Both read the same design values, so agreement shows the formulas fit this circuit, not that the part data is right"
+    }
+   ],
+   "all_agree": true
+  }
+ }
+}

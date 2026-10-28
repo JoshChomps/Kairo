@@ -1,0 +1,383 @@
+{
+ "status": "unverified",
+ "unverified_because": [
+  "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+  "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+  "the source on VIN_5V has no resistance stated and C1 no ESR, so the peak current is set by the edge alone; give the source's resistance or the capacitors' ESR"
+ ],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only.",
+  "xyce used a convergence aid (time steps chosen by iteration count, not error estimate, and a Newton current tolerance 1000 times the profile's) with the accurate settings.",
+  "xyce used a convergence aid (time steps chosen by iteration count, not error estimate, and a Newton current tolerance 1000 times the profile's) with the accurate, tightened settings."
+ ],
+ "limits": [],
+ "limits_basis": "stated values",
+ "on_default_margins": [],
+ "metrics": [
+  {
+   "metric": "start",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "VIN_5V",
+   "value": 5.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "VIN_5V",
+   "value": 5.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "VIN_5V",
+   "value": 8e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "VIN_5V",
+   "value": 9.9e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "+3V3",
+   "value": 4.61333e-12,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "+3V3",
+   "value": 3.29124,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "+3V3",
+   "value": 3.29124,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "+3V3",
+   "value": 4.61333e-12,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "+3V3",
+   "value": 2.09143e-11,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "+3V3",
+   "value": 0.000129413,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "+3V3",
+   "value": 0.000306008,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "LED_A",
+   "value": 3.00461e-09,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "LED_A",
+   "value": 3.00461e-09,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "LED_A",
+   "value": 2.21444e-14,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "LED_A",
+   "value": 4.19291e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "LED_A",
+   "value": 8.48218e-05,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak_current",
+   "where": "source VIN_5V",
+   "value": 1.48707,
+   "unit": "A",
+   "status": "unverified",
+   "unverified_because": [
+    "U1's model (Texas Instruments, LM1117_N_3P3_TRANS.LIB) was written for another simulator and has not been compared with it",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the source on VIN_5V has no resistance stated and C1 no ESR, so the peak current is set by the edge alone; give the source's resistance or the capacitors' ESR"
+   ]
+  }
+ ],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "U1",
+   "fidelity": "vendor-converted",
+   "source": "Texas Instruments, https://www.ti.com/lit/zip/SNOM488 (LM1117 3P3 Unencrypted PSpice Transient Model), Final 1.1, 17 March 2015, for datasheet SNOS412M",
+   "note": "subcircuit LM1117_N_3P3_TRANS from LM1117_N_3P3_TRANS.LIB; the maker says it covers: a transient model; the file states no scope. Its parameters give dropout against load current, a 1.2 A current limit, a 1.5 V under-voltage lockout, a start-up time, a supply-rejection pole and zero, and 1.5 mohm of output resistance. Xyce reads a copy changed only in spelling: line 47, C_U1_C1: IC= dropped, as ngspice ignores it without UIC; line 51, E_U1_E1: TABLE written with '=' and no outer parentheses",
+   "sha256": "e25b9813941ecfedfc2f5b6a5c6e7e172aa705b6a8e1d18976810dab3121c740"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "C2",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 2.2e-05 F; nominal (no DC-bias data), so in use it is likely less; in series with its stated ESR of 1 ohm"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "D1",
+   "fidelity": "behavioural",
+   "source": "kairo:fixed_drop",
+   "note": "conducts above its stated forward voltage of 2 V and drops that at any current; a real diode's drop rises with current, so currents near turn-on are not represented"
+  },
+  {
+   "ref": "source VIN_5V",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a step from 0 V to 5 V in 0.0001 s, with no impedance"
+  },
+  {
+   "ref": "load 1 on +3V3",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "a 11 ohm resistor (3.3 V / 0.3 A). The design gives the load's current, not how it behaves below nominal voltage"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "nominal_temperature_degC": 27.0
+   },
+   "convergence_aids": [
+    "time steps chosen by iteration count, not error estimate, and a Newton current tolerance 1000 times the profile's"
+   ]
+  }
+ ],
+ "failed_runs": [],
+ "practice": [
+  {
+   "code": "A_HOT_PLUG_NOT_ASSESSED",
+   "severity": "note",
+   "where": "VIN_5V",
+   "message": "VIN_5V is stepped through no inductance, so this run cannot show the ringing a cable causes when a live supply is plugged into C1. Such a spike can reach about twice the supply voltage. Give the source's inductance and resistance to simulate it",
+   "source": "Analog Devices AN88, Ceramic Input Capacitors Can Cause Overvoltage Transients",
+   "from_checked_numbers": true
+  },
+  {
+   "code": "A_INRUSH",
+   "severity": "note",
+   "where": "VIN_5V",
+   "message": "The source on VIN_5V supplies a peak of 1.487 A while the capacitors charge, against 0.3005 A once settled. Charging current is C * dV/dt, so a slower edge or soft-start lowers it. Check the peak against what the supply, connector and any fuse allow",
+   "source": "TI SLYT332, Taming linear-regulator inrush currents",
+   "from_checked_numbers": false
+  }
+ ],
+ "request": {
+  "analysis": {
+   "kind": "tran",
+   "duration": "2ms"
+  },
+  "stimuli": [
+   {
+    "net": "VIN_5V",
+    "kind": "step",
+    "value": "5V",
+    "rise": "100us"
+   }
+  ]
+ }
+}

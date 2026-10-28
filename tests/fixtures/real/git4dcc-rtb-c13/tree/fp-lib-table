@@ -1,0 +1,6 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "_Local")(type "KiCad")(uri "${KIPRJMOD}/../Local.pretty")(options "")(descr "")(disabled))
+  (lib (name "Connector_IDC")(type "KiCad")(uri "C:/RnD/NMRA/_KiCad/SamacSys/Connector_IDC.pretty")(options "")(descr ""))
+  (lib (name "RTB")(type "KiCad")(uri "${KIPRJMOD}/../SamacSys/SamacSys_Parts.pretty")(options "")(descr ""))
+)

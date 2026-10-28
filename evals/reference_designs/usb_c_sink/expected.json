@@ -1,0 +1,51 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "VBUS": [
+      "J1.A4",
+      "J1.A9",
+      "J1.B4",
+      "J1.B9",
+      "C1.1",
+      "J2.1"
+    ],
+    "GND": [
+      "J1.A1",
+      "J1.A12",
+      "J1.B1",
+      "J1.B12",
+      "J1.SH",
+      "R1.2",
+      "R2.2",
+      "C1.2",
+      "J2.2"
+    ],
+    "/CC1": [
+      "J1.A5",
+      "R1.1"
+    ],
+    "/CC2": [
+      "J1.B5",
+      "R2.1"
+    ],
+    "unconnected-(J1-D+-PadA6)": [
+      "J1.A6"
+    ],
+    "unconnected-(J1-D+-PadB6)": [
+      "J1.B6"
+    ],
+    "unconnected-(J1-D--PadA7)": [
+      "J1.A7"
+    ],
+    "unconnected-(J1-D--PadB7)": [
+      "J1.B7"
+    ],
+    "unconnected-(J1-SBU1-PadA8)": [
+      "J1.A8"
+    ],
+    "unconnected-(J1-SBU2-PadB8)": [
+      "J1.B8"
+    ]
+  },
+  "unverified": []
+}

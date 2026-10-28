@@ -1,0 +1,30 @@
+# Python and tool caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Build output
+dist/
+build/
+*.egg-info/
+docs/_build/
+
+
+# Lock files an open KiCad window leaves beside a project.
+~*.lck
+
+# The compiled loops' build output.
+rust/kairo_fast/target/
+# The compiled module, built into the package folder by an editable install.
+src/kairo/_fast*.pyd
+src/kairo/_fast*.so
+
+# Local-only files: AI tool configs, interview notes, secrets, editor locks
+CLAUDE.md
+AGENTS.md
+.claude/
+PROF_QA.md
+.env
+*.lck

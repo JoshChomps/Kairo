@@ -1,0 +1,34 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "VIN_5V": [
+      "J1.1",
+      "U1.3",
+      "C1.1"
+    ],
+    "+3V3": [
+      "U1.2",
+      "C2.1",
+      "R1.1"
+    ],
+    "/LED_A": [
+      "R1.2",
+      "D1.2"
+    ],
+    "GND": [
+      "J1.2",
+      "U1.1",
+      "C1.2",
+      "C2.2",
+      "D1.1"
+    ]
+  },
+  "unverified": [
+    "min_capacitance",
+    "rail_voltage",
+    "max_junction_temp",
+    "max_component_power",
+    "regulator_stability"
+  ],
+  "why_unverified": "the spec gives no quiescent current, no output tolerance, no capacitor part numbers and no LED forward-voltage tolerance, and no stable region for the regulator's output capacitor; Kairo must name each and must not supply one"
+}

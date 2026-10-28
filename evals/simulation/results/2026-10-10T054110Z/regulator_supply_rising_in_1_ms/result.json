@@ -1,0 +1,368 @@
+{
+ "status": "unverified",
+ "unverified_because": [
+  "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+  "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+  "the source on VIN_5V has no resistance stated and C1 no ESR, so the peak current is set by the edge alone; give the source's resistance or the capacitors' ESR"
+ ],
+ "to_resolve": [],
+ "notes": [
+  "Simulated at nominal values. Tolerances are not swept, so a limit that holds here holds at nominal only."
+ ],
+ "limits": [],
+ "metrics": [
+  {
+   "metric": "start",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "VIN_5V",
+   "value": 5.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "VIN_5V",
+   "value": 5.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "VIN_5V",
+   "value": 0.0,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "VIN_5V",
+   "value": 0.0008,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "VIN_5V",
+   "value": 0.00099,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "+3V3",
+   "value": 1.16547e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "+3V3",
+   "value": 3.29994,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "+3V3",
+   "value": 3.29994,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "+3V3",
+   "value": 1.16547e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "+3V3",
+   "value": 1.71998e-06,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "+3V3",
+   "value": 0.000528015,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "+3V3",
+   "value": 0.000913543,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "start",
+   "where": "LED_A",
+   "value": 1.16577e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "final",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak",
+   "where": "LED_A",
+   "value": 2.00543,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "lowest",
+   "where": "LED_A",
+   "value": 1.16577e-05,
+   "unit": "V",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "overshoot",
+   "where": "LED_A",
+   "value": 5.65393e-10,
+   "unit": "%",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "rise_time",
+   "where": "LED_A",
+   "value": 0.00032089,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "settling_time",
+   "where": "LED_A",
+   "value": 0.000657076,
+   "unit": "s",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency"
+   ]
+  },
+  {
+   "metric": "peak_current",
+   "where": "source VIN_5V",
+   "value": 0.456424,
+   "unit": "A",
+   "status": "unverified",
+   "unverified_because": [
+    "U1 is a behavioural model (kairo:ldo_macro), which does not represent how the part behaves in time or against frequency",
+    "D1 is a behavioural model (kairo:fixed_drop), which does not represent how the part behaves in time or against frequency",
+    "the source on VIN_5V has no resistance stated and C1 no ESR, so the peak current is set by the edge alone; give the source's resistance or the capacitors' ESR"
+   ]
+  }
+ ],
+ "compared": [],
+ "models": [
+  {
+   "ref": "J1",
+   "fidelity": "terminal",
+   "source": "kairo",
+   "note": "a place to connect; open"
+  },
+  {
+   "ref": "U1",
+   "fidelity": "behavioural",
+   "source": "kairo:ldo_macro",
+   "note": "holds 3.3 V, or the input less its stated dropout of 1.3 V when that is lower; the input draws the output current, its quiescent current is not given, so none is drawn. Current limit, start-up, loop response and supply rejection are not represented"
+  },
+  {
+   "ref": "C1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "C2",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 2.2e-05 F; nominal (no DC-bias data), so in use it is likely less; no ESR stated, so none is modelled"
+  },
+  {
+   "ref": "R1",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "an ideal 1000 ohm"
+  },
+  {
+   "ref": "D1",
+   "fidelity": "behavioural",
+   "source": "kairo:fixed_drop",
+   "note": "conducts above its stated forward voltage of 2 V and drops that at any current; a real diode's drop rises with current, so currents near turn-on are not represented"
+  },
+  {
+   "ref": "source VIN_5V",
+   "fidelity": "primitive",
+   "source": "user-stated",
+   "note": "a step from 0 V to 5 V in 0.001 s, with no impedance"
+  },
+  {
+   "ref": "load 1 on +3V3",
+   "fidelity": "primitive",
+   "source": "kairo",
+   "note": "a 11 ohm resistor (3.3 V / 0.3 A). The design gives the load's current, not how it behaves below nominal voltage"
+  }
+ ],
+ "engines": [
+  {
+   "name": "ngspice",
+   "version": "47",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  },
+  {
+   "name": "xyce",
+   "version": "7.10.0",
+   "validated": true,
+   "settings": {
+    "profile": "accurate",
+    "reltol": 0.0001,
+    "abstol": 1e-13,
+    "vntol": 1e-07,
+    "chgtol": 1e-15,
+    "method": "trap",
+    "least_steps": 2000,
+    "temperature_degC": 27.0
+   },
+   "convergence_aids": []
+  }
+ ],
+ "failed_runs": [],
+ "practice": [
+  {
+   "code": "A_HOT_PLUG_NOT_ASSESSED",
+   "severity": "note",
+   "where": "VIN_5V",
+   "message": "VIN_5V is stepped through no inductance, so this run cannot show the ringing a cable causes when a live supply is plugged into C1. Such a spike can reach about twice the supply voltage. Give the source's inductance and resistance to simulate it",
+   "source": "Analog Devices AN88, Ceramic Input Capacitors Can Cause Overvoltage Transients",
+   "from_checked_numbers": true
+  }
+ ],
+ "request": {
+  "analysis": {
+   "kind": "tran",
+   "duration": "5ms"
+  },
+  "stimuli": [
+   {
+    "net": "VIN_5V",
+    "kind": "step",
+    "value": "5V",
+    "rise": "1ms"
+   }
+  ]
+ }
+}

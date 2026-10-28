@@ -1,0 +1,45 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "VIN_12V": [
+      "J1.1",
+      "U1.3",
+      "C1.1"
+    ],
+    "/SW": [
+      "U1.2",
+      "L1.1",
+      "C2.2"
+    ],
+    "/BOOT": [
+      "U1.6",
+      "C2.1"
+    ],
+    "+5V": [
+      "L1.2",
+      "C3.1",
+      "R1.1",
+      "J2.1"
+    ],
+    "/FB": [
+      "R1.2",
+      "R2.1",
+      "U1.4"
+    ],
+    "GND": [
+      "J1.2",
+      "J2.2",
+      "U1.1",
+      "C1.2",
+      "C3.2",
+      "R2.2"
+    ],
+    "unconnected-(U1-EN-Pad5)": [
+      "U1.5"
+    ]
+  },
+  "unverified": [
+    "regulator_stability"
+  ],
+  "why_unverified": "a switching regulator's stability is a matter of its control loop, which nothing here measures"
+}

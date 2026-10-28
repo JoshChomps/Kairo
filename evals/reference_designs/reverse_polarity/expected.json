@@ -1,0 +1,9 @@
+{
+  "outcome": "design",
+  "netlist": {
+    "VIN_RAW": ["J1.1", "D1.2"],
+    "VIN_PROT": ["D1.1", "C1.1", "J2.1"],
+    "GND": ["J1.2", "C1.2", "J2.2"]
+  },
+  "unverified": []
+}

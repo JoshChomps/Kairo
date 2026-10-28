@@ -1,0 +1,38 @@
+{
+  "design": "reverse_polarity",
+  "policy": {"margins": "stated"},
+  "nets": {
+    "VIN_RAW": {"role": "power", "voltage": "12V"},
+    "VIN_PROT": {"role": "power", "voltage": "11.6V"},
+    "GND": {"role": "ground"}
+  },
+  "components": {
+    "J1": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    },
+    "D1": {
+      "lib_id": "Device:D_Schottky",
+      "params": {"v_f": "0.4V", "i_rating": "1A", "v_rating": "40V"},
+      "footprint": "Diode_SMD:D_SMA"
+    },
+    "C1": {
+      "lib_id": "Device:C",
+      "value": "10uF",
+      "params": {"v_rating": "25V", "tolerance": "10%", "dielectric": "X7R"},
+      "footprint": "Capacitor_SMD:C_1206_3216Metric"
+    },
+    "J2": {
+      "lib_id": "Connector:Conn_01x02_Pin",
+      "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+    }
+  },
+  "connections": {
+    "VIN_RAW": ["J1.Pin_1", "D1.A"],
+    "VIN_PROT": ["D1.K", "C1.1", "J2.Pin_1"],
+    "GND": ["J1.Pin_2", "C1.2", "J2.Pin_2"]
+  },
+  "loads": [{"net": "VIN_PROT", "current": "500mA", "note": "everything downstream"}],
+  "blocks": {"input": ["J1", "D1"], "output": ["C1", "J2"]},
+  "placement": {"order": ["input", "output"]}
+}
